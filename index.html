@@ -312,8 +312,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   .hero-artwork{width:180px;height:180px;border-radius:18px}
   .episode-item{padding:1rem;gap:.8rem}
   .episode-title{font-size:.85rem}
-  .ai-features{flex-direction:column;align-items:center}
-  .ai-feat{max-width:100%;min-width:0}
+  .ai-features{flex-wrap:wrap}
+  .ai-feat{flex:1 1 40%;max-width:48%;min-width:0;padding:.7rem .8rem}
+  .ai-feat-icon{font-size:1.2rem}
+  .ai-feat-label{font-size:.7rem}
   .short-card{flex:0 0 180px}
   .shorts-header{padding:0 1.5rem}
   .shorts-scroll{padding:0 1.5rem 1.5rem}
@@ -381,16 +383,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   <div class="concept-box fade-in">
     <h3>AIに勝てる、くだらなさを探せ。</h3>
     <p>
-      AIが文章を書き、絵を描き、コードを書き、音楽を作る時代。人間に残された最後の武器は何か？
+      AIが何でもできる時代、人間に残る武器は<strong>「声の温度」と「筋肉の説得力」</strong>、そして<em>AIには理解できない「くだらなさ」</em>。
     </p>
     <p>
-      それは、<strong>「声の温度」と「筋肉の説得力」</strong>。そして何より、<em>AIには絶対に理解できない「くだらなさ」</em>。
-    </p>
-    <p>
-      中学・高校の同級生である<strong>ミヤザワ</strong>と<strong>ナカジマ</strong>が、男子校ノリ全開で、お便りと日常のネタを武器に<strong>AIとガチで戦うポッドキャスト</strong>。それがオーモシロ・シュワルツェネッガー。
-    </p>
-    <p>
-      さらに、番組公式AI<em>「オモシュワくん」</em>が参戦。人間 vs AI の大喜利バトルも毎週開催中。<strong>あなたも共犯者として、この戦いに参加しないか？</strong>
+      同級生コンビ<strong>ミヤザワ</strong>と<strong>ナカジマ</strong>が男子校ノリ全開で<strong>AIとガチで戦うポッドキャスト</strong>。公式AI<em>「オモシュワくん」</em>も参戦中。<strong>あなたも共犯者にならないか？</strong>
     </p>
   </div>
 </section>
@@ -424,10 +420,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <h3>&#129302; オモシュワくん</h3>
     <div class="ai-subtitle">ARTIFICIAL INTELLIGENCE &#8212; ENEMY OR ALLY?</div>
     <p class="ai-desc">
-      番組の公式AI。<strong>男子校の全知識を持つ最強の男子校生AI</strong>。<br>
-      大喜利では人間に挑み、お便りに毒舌で返し、ナカジマを煽る。<br>
-      LINEで友だち追加すれば、いつでもこいつと勝負できる。<br>
-      <strong>果たして人間はAIに勝てるのか？</strong>
+      <strong>男子校の全知識を持つ最強AI</strong>。大喜利で人間に挑み、毒舌でナカジマを煽る。LINEで友だち追加すれば、いつでもこいつと勝負できる。
     </p>
     <div class="ai-features">
       <div class="ai-feat"><div class="ai-feat-icon">&#9876;</div><div class="ai-feat-label">大喜利バトル</div></div>
@@ -462,27 +455,27 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   </div>
   <div class="shorts-scroll">
     <div class="short-card" data-video="shorts/clip01_%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%E3%81%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3.mp4">
-      <video src="shorts/clip01_%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%E3%81%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <video src="shorts/clip01_%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%E3%81%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
       <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP07</div><div class="short-card-title">アバターはレストラン</div></div>
     </div>
     <div class="short-card" data-video="shorts/clip01_SNS%E5%88%B6%E9%99%90%E3%81%97%E3%81%9F%E3%82%89LINE%E3%81%8CX%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.mp4">
-      <video src="shorts/clip01_SNS%E5%88%B6%E9%99%90%E3%81%97%E3%81%9F%E3%82%89LINE%E3%81%8CX%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <video src="shorts/clip01_SNS%E5%88%B6%E9%99%90%E3%81%97%E3%81%9F%E3%82%89LINE%E3%81%8CX%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
       <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP06</div><div class="short-card-title">SNS制限したらLINEがXになった</div></div>
     </div>
     <div class="short-card" data-video="shorts/clip01_%E4%BF%9D%E9%99%BA%E7%9B%B8%E8%AB%87%E3%81%A7%E5%8F%B7%E6%B3%A3%E3%83%9D%E3%83%83%E3%82%B5%E3%83%A0.mp4">
-      <video src="shorts/clip01_%E4%BF%9D%E9%99%BA%E7%9B%B8%E8%AB%87%E3%81%A7%E5%8F%B7%E6%B3%A3%E3%83%9D%E3%83%83%E3%82%B5%E3%83%A0.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <video src="shorts/clip01_%E4%BF%9D%E9%99%BA%E7%9B%B8%E8%AB%87%E3%81%A7%E5%8F%B7%E6%B3%A3%E3%83%9D%E3%83%83%E3%82%B5%E3%83%A0.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
       <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP05</div><div class="short-card-title">保険相談で号泣ポッサム</div></div>
     </div>
     <div class="short-card" data-video="shorts/clip01_%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%A7%E9%9B%A2%E5%A9%9A%E5%A0%B1%E5%91%8A.mp4">
-      <video src="shorts/clip01_%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%A7%E9%9B%A2%E5%A9%9A%E5%A0%B1%E5%91%8A.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <video src="shorts/clip01_%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%A7%E9%9B%A2%E5%A9%9A%E5%A0%B1%E5%91%8A.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
       <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP04</div><div class="short-card-title">結婚式で離婚報告</div></div>
     </div>
     <div class="short-card" data-video="shorts/clip01_%E5%A4%A7%E4%BA%BA%E3%81%8C%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E9%A3%B2%E3%82%93%E3%81%A7%E3%82%8B%E4%BB%B6.mp4">
-      <video src="shorts/clip01_%E5%A4%A7%E4%BA%BA%E3%81%8C%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E9%A3%B2%E3%82%93%E3%81%A7%E3%82%8B%E4%BB%B6.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <video src="shorts/clip01_%E5%A4%A7%E4%BA%BA%E3%81%8C%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E9%A3%B2%E3%82%93%E3%81%A7%E3%82%8B%E4%BB%B6.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
       <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP03</div><div class="short-card-title">大人が粉ミルク飲んでる件</div></div>
     </div>
@@ -618,8 +611,8 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 <div class="share-section fade-in">
   <p>この番組を広めてくれると、人類側の戦力になる。</p>
   <div class="share-btns">
-    <a href="https://twitter.com/intent/tweet?text=%E3%82%AA%E3%83%BC%E3%83%A2%E3%82%B7%E3%83%AD%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%AF%E3%83%AB%E3%83%84%E3%82%A7%E3%83%8D%E3%83%83%E3%82%AC%E3%83%BC%20%E2%80%95%20AI%20vs%20%E4%BA%BA%E9%96%93%E3%81%AE%E7%9C%9F%E5%89%A3%E5%8B%9D%E8%B2%A0%E3%83%9D%E3%83%83%E3%83%89%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88%20%23%E3%82%AA%E3%83%A2%E3%82%B7%E3%83%A5%E3%83%AF%20%23AIvs%E4%BA%BA%E9%96%93&url=https%3A%2F%2Fnakazi555.github.io%2Fomoshu-bot%2F" target="_blank" rel="noopener" class="share-btn x-share"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X (Twitter) でシェア</a>
-    <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnakazi555.github.io%2Fomoshu-bot%2F" target="_blank" rel="noopener" class="share-btn line-share"><svg width="16" height="16" viewBox="0 0 24 24" fill="#06c755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386a.63.63 0 01-.63-.63V8.108a.63.63 0 01.63-.63h2.386c.349 0 .63.282.63.63 0 .349-.281.631-.63.631H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 01-.63.63.629.629 0 01-.51-.259l-2.443-3.317v2.946a.63.63 0 01-1.261 0V8.108a.63.63 0 01.63-.63c.201 0 .385.096.51.259l2.443 3.317V8.108a.63.63 0 011.261 0v4.771zm-5.741 0a.63.63 0 01-1.261 0V8.108a.63.63 0 011.261 0v4.771zm-2.304.63H4.879a.63.63 0 01-.63-.63V8.108a.63.63 0 011.261 0v4.141h2.955c.349 0 .63.283.63.63 0 .349-.281.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.084.922.258 1.058.593.12.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967C23.268 14.247 24 12.421 24 10.314z"/></svg> LINE でシェア</a>
+    <a href="https://twitter.com/intent/tweet?text=%E3%82%AA%E3%83%BC%E3%83%A2%E3%82%B7%E3%83%AD%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%AF%E3%83%AB%E3%83%84%E3%82%A7%E3%83%8D%E3%83%83%E3%82%AC%E3%83%BC%20%E2%80%95%20AI%20vs%20%E4%BA%BA%E9%96%93%E3%81%AE%E7%9C%9F%E5%89%A3%E5%8B%9D%E8%B2%A0%E3%83%9D%E3%83%83%E3%83%89%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88%20%23%E3%82%AA%E3%83%A2%E3%82%B7%E3%83%A5%E3%83%AF%20%23AIvs%E4%BA%BA%E9%96%93&url=https%3A%2F%2Fnakazi555.github.io%2Fomoshu-web%2F" target="_blank" rel="noopener" class="share-btn x-share"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X (Twitter) でシェア</a>
+    <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnakazi555.github.io%2Fomoshu-web%2F" target="_blank" rel="noopener" class="share-btn line-share"><svg width="16" height="16" viewBox="0 0 24 24" fill="#06c755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386a.63.63 0 01-.63-.63V8.108a.63.63 0 01.63-.63h2.386c.349 0 .63.282.63.63 0 .349-.281.631-.63.631H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 01-.63.63.629.629 0 01-.51-.259l-2.443-3.317v2.946a.63.63 0 01-1.261 0V8.108a.63.63 0 01.63-.63c.201 0 .385.096.51.259l2.443 3.317V8.108a.63.63 0 011.261 0v4.771zm-5.741 0a.63.63 0 01-1.261 0V8.108a.63.63 0 011.261 0v4.771zm-2.304.63H4.879a.63.63 0 01-.63-.63V8.108a.63.63 0 011.261 0v4.141h2.955c.349 0 .63.283.63.63 0 .349-.281.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.084.922.258 1.058.593.12.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967C23.268 14.247 24 12.421 24 10.314z"/></svg> LINE でシェア</a>
   </div>
 </div>
 
@@ -691,16 +684,29 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 })();
 
 /* Shorts toggle */
+var playSVG='<polygon points="6,3 20,12 6,21"/>';
+var pauseSVG='<rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/>';
+function updateBtn(card,playing){
+  var svg=card.querySelector('.short-play-btn svg');
+  if(svg) svg.innerHTML=playing?pauseSVG:playSVG;
+}
 function toggleShort(btn){
   var card=btn.closest('.short-card');
   var vid=card.querySelector('video');
   if(vid.paused){
-    document.querySelectorAll('.short-card video').forEach(function(v){v.pause();v.closest('.short-card').classList.remove('playing')});
-    vid.play();card.classList.add('playing');
+    document.querySelectorAll('.short-card').forEach(function(c){
+      var v=c.querySelector('video');v.pause();c.classList.remove('playing');updateBtn(c,false);
+    });
+    vid.play();card.classList.add('playing');updateBtn(card,true);
   }else{
-    vid.pause();card.classList.remove('playing');
+    vid.pause();card.classList.remove('playing');updateBtn(card,false);
   }
 }
+
+/* Reset icon when video ends */
+document.querySelectorAll('.short-card video').forEach(function(v){
+  v.addEventListener('ended',function(){var c=this.closest('.short-card');c.classList.remove('playing');updateBtn(c,false)});
+});
 
 /* JPA Countdown */
 (function(){

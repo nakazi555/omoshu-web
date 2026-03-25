@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nakazi555.github.io/omoshu-web/sitemap.xml
