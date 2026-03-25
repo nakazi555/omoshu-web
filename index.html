@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://open.spotify.com">
+<link rel="preconnect" href="https://d3t3ozftmdmh3i.cloudfront.net">
+<title>オーモシロ・シュワルツェネッガー — AI vs 人間の真剣勝負ポッドキャスト</title>
+<meta name="description" content="AI vs 人間の真剣勝負。声と筋肉は裏切らない。喋るのが好きミヤザワと筋肉が好きナカジマが送る、AIに勝てるくだらなさを探すポッドキャスト。">
+
+<!-- OGP -->
+<meta property="og:title" content="オーモシロ・シュワルツェネッガー — AI vs 人間の真剣勝負">
+<meta property="og:description" content="AI vs 人間の真剣勝負。声と筋肉は裏切らない。AIに奪われない、どうでもいい力。">
+<meta property="og:image" content="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44924565/44924565-1772687358627-8ddaa3902034d.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nakazi555.github.io/omoshu-web/">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="オーモシロ・シュワルツェネッガー — AI vs 人間の真剣勝負">
+<meta name="twitter:description" content="声と筋肉は裏切らない。AIに勝てるくだらなさを探すポッドキャスト。">
+<meta name="twitter:image" content="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44924565/44924565-1772687358627-8ddaa3902034d.jpg">
+
+<!-- Schema.org PodcastSeries -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastSeries",
+  "name": "オーモシロ・シュワルツェネッガー",
+  "description": "AI vs 人間の真剣勝負。声と筋肉は裏切らない。喋るのが好きミヤザワと筋肉が好きナカジマが送る、AIに勝てるくだらなさを探すポッドキャスト。",
+  "url": "https://nakazi555.github.io/omoshu-web/",
+  "webFeed": "https://listen.style/p/omoshiro_schwarzenegger/rss",
+  "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44924565/44924565-1772687358627-8ddaa3902034d.jpg",
+  "author": [
+    { "@type": "Person", "name": "ミヤザワ" },
+    { "@type": "Person", "name": "ナカジマ" }
+  ],
+  "genre": ["Comedy", "Technology"],
+  "inLanguage": "ja"
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Orbitron:wght@700;900&display=swap');
+
+:root{
+  --red:#e63946;
+  --dark:#0a0a0f;
+  --darker:#050508;
+  --cyan:#00f0ff;
+  --green:#39ff14;
+  --orange:#ff6b35;
+  --white:#f1faee;
+  --gray:#a8a8b3;
+  --card-bg:rgba(15,15,25,0.85);
+  --spotify:#1ed760;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--darker);color:var(--white);overflow-x:hidden;line-height:1.8}
+body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.05) 2px,rgba(0,0,0,0.05) 4px);pointer-events:none;z-index:9998}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(5,5,8,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,240,255,0.15);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-weight:900;font-size:.95rem;color:var(--cyan);text-decoration:none;letter-spacing:1px;text-shadow:0 0 10px rgba(0,240,255,0.5);display:flex;align-items:center;gap:.5rem}
+.logo-tag{font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:3px;background:rgba(0,240,255,0.12);border:1px solid rgba(0,240,255,0.25);padding:.15rem .5rem;border-radius:4px;color:var(--cyan);flex-shrink:0}
+nav ul{list-style:none;display:flex;gap:1.8rem;align-items:center}
+nav ul li a{color:var(--gray);text-decoration:none;font-size:.82rem;font-weight:700;letter-spacing:1px;transition:color .3s;position:relative}
+nav ul li a:hover{color:var(--cyan)}
+nav ul li a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--cyan);transition:width .3s}
+nav ul li a:hover::after{width:100%}
+.nav-cta{background:var(--spotify);color:#000!important;padding:.45rem 1rem;border-radius:50px;font-size:.78rem;font-weight:900;letter-spacing:1px;transition:all .3s;display:inline-flex;align-items:center;gap:.4rem;box-shadow:0 0 12px rgba(30,215,96,0.3)}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(30,215,96,0.5)}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--cyan);transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:6rem 2rem 4rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(230,57,70,0.18) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(0,240,255,0.12) 0%,transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(57,255,20,0.05) 0%,transparent 40%);z-index:0}
+.hero-grid{position:absolute;inset:0;background:linear-gradient(rgba(0,240,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0;animation:gridMove 20s linear infinite}
+@keyframes gridMove{0%{transform:perspective(500px) rotateX(0deg)}100%{transform:perspective(500px) rotateX(2deg)}}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.hero-artwork{width:240px;height:240px;border-radius:24px;margin:0 auto 2rem;box-shadow:0 0 60px rgba(230,57,70,0.3),0 0 120px rgba(0,240,255,0.15);border:2px solid rgba(255,255,255,0.1);overflow:hidden;animation:artFloat 6s ease-in-out infinite}
+.hero-artwork img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes artFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-badge{display:inline-block;background:rgba(230,57,70,0.15);border:1px solid rgba(230,57,70,0.4);color:var(--red);font-size:.75rem;font-weight:700;letter-spacing:3px;padding:.4rem 1.2rem;border-radius:50px;margin-bottom:1.5rem;font-family:'Orbitron',sans-serif}
+.hero-title{font-weight:900;font-size:clamp(2rem,5.5vw,3.8rem);line-height:1.2;margin-bottom:.8rem;background:linear-gradient(135deg,var(--white) 0%,var(--cyan) 50%,var(--white) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+@keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
+.hero-title-en{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(.65rem,1.8vw,1rem);letter-spacing:4px;color:var(--cyan);text-shadow:0 0 20px rgba(0,240,255,0.4);margin-bottom:1.5rem;opacity:.8}
+.hero-catch{font-size:clamp(1.1rem,2.8vw,1.7rem);font-weight:900;color:var(--red);margin-bottom:.4rem;text-shadow:0 0 30px rgba(230,57,70,0.3)}
+.hero-sub{font-size:clamp(.85rem,1.8vw,1.1rem);color:var(--gray);margin-bottom:2.5rem}
+.hero-sub em{font-style:normal;color:var(--green)}
+.hero-desc{font-size:.95rem;color:var(--gray);max-width:660px;margin:0 auto 2.5rem;line-height:2}
+.hero-desc strong{color:var(--white)}
+.cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* GLITCH */
+.glitch{position:relative}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;background:transparent}
+.glitch::before{left:2px;text-shadow:-2px 0 var(--red);animation:g1 3s infinite linear alternate-reverse;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background:linear-gradient(135deg,var(--white) 0%,var(--cyan) 50%,var(--white) 100%);background-size:200% auto;background-clip:text}
+.glitch::after{left:-2px;text-shadow:2px 0 var(--cyan);animation:g2 3s infinite linear alternate-reverse;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background:linear-gradient(135deg,var(--white) 0%,var(--cyan) 50%,var(--white) 100%);background-size:200% auto;background-clip:text}
+@keyframes g1{0%{clip-path:inset(40% 0 61% 0)}20%{clip-path:inset(92% 0 1% 0)}40%{clip-path:inset(43% 0 1% 0)}60%{clip-path:inset(25% 0 58% 0)}80%{clip-path:inset(54% 0 7% 0)}100%{clip-path:inset(58% 0 43% 0)}}
+@keyframes g2{0%{clip-path:inset(65% 0 13% 0)}20%{clip-path:inset(79% 0 6% 0)}40%{clip-path:inset(48% 0 38% 0)}60%{clip-path:inset(59% 0 26% 0)}80%{clip-path:inset(87% 0 4% 0)}100%{clip-path:inset(22% 0 55% 0)}}
+
+/* PARTICLES */
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.particle{position:absolute;width:2px;height:2px;background:var(--cyan);border-radius:50%;opacity:.4;animation:float-up linear infinite}
+@keyframes float-up{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.4}90%{opacity:.4}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:8px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:inherit;color:var(--white)}
+.btn:hover{text-decoration:none}
+.btn-spotify{background:var(--spotify);color:#000;box-shadow:0 0 20px rgba(30,215,96,0.3);font-weight:900}
+.btn-spotify:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(30,215,96,0.5);color:#000}
+.btn-primary{background:var(--red);box-shadow:0 0 25px rgba(230,57,70,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(230,57,70,0.5)}
+.btn-outline{background:transparent;color:var(--cyan);border:1px solid rgba(0,240,255,0.4)}
+.btn-outline:hover{background:rgba(0,240,255,0.1);transform:translateY(-2px)}
+.btn-apple{background:#a349d5;box-shadow:0 0 20px rgba(163,73,213,0.3)}
+.btn-apple:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(163,73,213,0.5)}
+.btn-listen{background:var(--orange);box-shadow:0 0 20px rgba(255,107,53,0.3)}
+.btn-listen:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(255,107,53,0.5)}
+
+/* SECTIONS */
+section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:5px;color:var(--cyan);text-transform:uppercase;margin-bottom:.5rem;opacity:.7}
+.section-title{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:900;margin-bottom:1rem;line-height:1.3}
+.section-subtitle{color:var(--gray);font-size:1rem;margin-bottom:3rem;max-width:600px}
+
+/* STATS BAR */
+.stats-bar{display:flex;justify-content:center;gap:0;max-width:700px;margin:-1rem auto 0;position:relative;z-index:2;background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;backdrop-filter:blur(10px)}
+.stat{flex:1;text-align:center;padding:1.2rem .5rem;position:relative}
+.stat+.stat::before{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,0.08)}
+.stat-num{display:block;font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(1rem,2.5vw,1.4rem);color:var(--cyan);text-shadow:0 0 12px rgba(0,240,255,0.3)}
+.stat-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:2px;color:var(--gray);margin-top:.2rem}
+
+/* VS DIVIDER */
+.vs-divider{text-align:center;padding:2rem 0;position:relative}
+.vs-divider::before,.vs-divider::after{content:'';position:absolute;top:50%;width:35%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,240,255,0.3),transparent)}
+.vs-divider::before{left:5%}.vs-divider::after{right:5%}
+.vs-text{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:900;color:var(--red);text-shadow:0 0 20px rgba(230,57,70,0.5);letter-spacing:8px}
+
+/* CONCEPT */
+.concept-box{background:var(--card-bg);border:1px solid rgba(230,57,70,0.2);border-radius:20px;padding:3rem 2.5rem;max-width:800px;margin:0 auto;position:relative;overflow:hidden}
+.concept-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange),var(--red))}
+.concept-box h3{font-size:1.4rem;font-weight:900;margin-bottom:1.5rem;color:var(--red)}
+.concept-box p{font-size:1rem;line-height:2;color:var(--gray);margin-bottom:1rem}
+.concept-box p:last-child{margin-bottom:0}
+.concept-box p strong{color:var(--white)}
+.concept-box p em{font-style:normal;color:var(--cyan)}
+
+/* PERSONALITY */
+.personality-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.personality-card{background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:2.5rem 2rem;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.personality-card:hover{border-color:rgba(255,255,255,0.12);transform:translateY(-4px)}
+.personality-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.personality-card:nth-child(1)::before{background:linear-gradient(90deg,var(--cyan),var(--green))}
+.personality-card:nth-child(2)::before{background:linear-gradient(90deg,var(--red),var(--orange))}
+.personality-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-size:2.2rem}
+.personality-card:nth-child(1) .personality-avatar{background:linear-gradient(135deg,rgba(0,240,255,0.15),rgba(57,255,20,0.1));border:2px solid rgba(0,240,255,0.3)}
+.personality-card:nth-child(2) .personality-avatar{background:linear-gradient(135deg,rgba(230,57,70,0.15),rgba(255,107,53,0.1));border:2px solid rgba(230,57,70,0.3)}
+.personality-card h3{font-size:1.3rem;font-weight:900;margin-bottom:.3rem}
+.personality-role{font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;display:inline-block;padding:.2rem .8rem;border-radius:50px}
+.personality-card:nth-child(1) .personality-role{color:var(--cyan);background:rgba(0,240,255,0.1)}
+.personality-card:nth-child(2) .personality-role{color:var(--red);background:rgba(230,57,70,0.1)}
+.personality-desc{color:var(--gray);font-size:.9rem;line-height:1.9;text-align:left}
+.personality-desc strong{color:var(--white)}
+
+/* AI SECTION */
+.ai-card{background:linear-gradient(135deg,rgba(57,255,20,0.06),rgba(0,240,255,0.04));border:1px solid rgba(57,255,20,0.2);border-radius:20px;padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden;margin-top:2rem}
+.ai-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--cyan),var(--green))}
+.ai-card h3{font-size:1.4rem;font-weight:900;margin-bottom:.5rem}
+.ai-card .ai-subtitle{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:3px;color:var(--green);margin-bottom:1.5rem}
+.ai-card .ai-desc{color:var(--gray);font-size:.95rem;max-width:600px;margin:0 auto 2rem;line-height:2}
+.ai-card .ai-desc strong{color:var(--white)}
+.ai-features{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.ai-feat{background:rgba(255,255,255,0.04);border:1px solid rgba(57,255,20,0.15);border-radius:12px;padding:1rem 1.2rem;flex:1;min-width:120px;max-width:160px;transition:all .3s}
+.ai-feat:hover{border-color:rgba(57,255,20,0.4);transform:translateY(-2px)}
+.ai-feat-icon{font-size:1.5rem;margin-bottom:.3rem}
+.ai-feat-label{font-size:.8rem;font-weight:700;color:var(--green)}
+
+/* EPISODES */
+.episode-list{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.episode-item{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 1.5rem;background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);border-radius:14px;transition:all .3s;text-decoration:none;color:var(--white)}
+.episode-item:hover{border-color:rgba(30,215,96,0.3);transform:translateX(6px);text-decoration:none}
+.episode-num{font-family:'Orbitron',sans-serif;font-weight:900;font-size:.75rem;color:var(--cyan);min-width:42px;text-align:center;padding:.3rem .5rem;border:1px solid rgba(0,240,255,0.2);border-radius:6px;letter-spacing:1px;flex-shrink:0}
+.episode-info{flex:1;min-width:0}
+.episode-title{font-weight:700;font-size:.95rem;margin-bottom:.2rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.episode-meta{font-size:.75rem;color:var(--gray)}
+.episode-play{color:var(--spotify);font-size:1.4rem;flex-shrink:0;transition:transform .3s}
+.episode-item:hover .episode-play{transform:scale(1.2)}
+
+/* PLATFORMS */
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.platform-link{display:flex;align-items:center;gap:.8rem;padding:1rem 1.2rem;background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);border-radius:12px;text-decoration:none;color:var(--white);font-weight:700;font-size:.9rem;transition:all .3s;position:relative;overflow:hidden}
+.platform-link:hover{transform:translateX(6px);border-color:rgba(255,255,255,0.15);text-decoration:none}
+.platform-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.platform-dot.s{background:var(--spotify);box-shadow:0 0 8px rgba(30,215,96,0.5)}
+.platform-dot.a{background:#a349d5;box-shadow:0 0 8px rgba(163,73,213,0.5)}
+.platform-dot.l{background:var(--orange);box-shadow:0 0 8px rgba(255,107,53,0.5)}
+.platform-dot.m{background:#00a8e1;box-shadow:0 0 8px rgba(0,168,225,0.5)}
+.platform-dot.y{background:#ff0000;box-shadow:0 0 8px rgba(255,0,0,0.5)}
+.platform-arrow{margin-left:auto;color:var(--gray);font-size:1.2rem;transition:transform .3s}
+.platform-link:hover .platform-arrow{transform:translateX(4px)}
+
+/* JPA */
+.jpa-box{background:linear-gradient(135deg,rgba(230,57,70,0.1),rgba(0,240,255,0.05));border:1px solid rgba(230,57,70,0.25);border-radius:24px;padding:4rem 2.5rem;max-width:800px;margin:0 auto;text-align:center;position:relative;overflow:hidden}
+.jpa-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(230,57,70,0.05),transparent,rgba(0,240,255,0.05),transparent);animation:rotateBg 15s linear infinite;z-index:0}
+@keyframes rotateBg{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.jpa-box>*{position:relative;z-index:1}
+.jpa-box h3{font-size:clamp(1.3rem,3vw,2rem);font-weight:900;margin-bottom:1rem}
+.jpa-box p{color:var(--gray);font-size:.95rem;margin-bottom:2rem;line-height:1.8}
+.jpa-box .countdown{font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--red);text-shadow:0 0 30px rgba(230,57,70,0.4);margin-bottom:.5rem}
+.jpa-box .countdown-label{font-size:.85rem;color:var(--gray);margin-bottom:2rem}
+
+/* FOLLOW BANNER */
+.follow-banner{padding:3rem 2rem;text-align:center;background:linear-gradient(135deg,rgba(30,215,96,0.08),rgba(0,240,255,0.04));border-top:1px solid rgba(30,215,96,0.15);border-bottom:1px solid rgba(30,215,96,0.15)}
+.follow-banner p{color:var(--gray);font-size:.9rem;margin-bottom:1.2rem;font-weight:700}
+.follow-banner p strong{color:var(--white)}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3rem 2rem 6rem}
+.footer-logo{font-weight:900;font-size:.9rem;color:var(--cyan);letter-spacing:1px;margin-bottom:.5rem;text-shadow:0 0 10px rgba(0,240,255,0.3)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.25);margin-bottom:1rem}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+.footer-links a{color:var(--gray);text-decoration:none;font-size:.8rem;transition:color .3s}
+.footer-links a:hover{color:var(--cyan)}
+
+/* HASHTAGS */
+.hashtags{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem}
+.hashtags span{display:inline-block;padding:.3rem .8rem;background:rgba(0,240,255,0.06);border:1px solid rgba(0,240,255,0.15);border-radius:50px;font-size:.75rem;color:var(--cyan);font-weight:700;letter-spacing:1px}
+
+/* LINE CTA */
+.line-cta{background:linear-gradient(135deg,rgba(6,199,85,0.1),rgba(0,240,255,0.04));border:1px solid rgba(6,199,85,0.3);border-radius:20px;padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden;margin-top:2rem}
+.line-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#06c755,var(--cyan),#06c755)}
+.line-cta h3{font-size:1.3rem;font-weight:900;margin-bottom:.5rem}
+.line-cta .line-subtitle{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:3px;color:#06c755;margin-bottom:1.5rem}
+.line-cta .line-desc{color:var(--gray);font-size:.95rem;max-width:550px;margin:0 auto 2rem;line-height:2}
+.line-cta .line-desc strong{color:var(--white)}
+.btn-line{background:#06c755;color:#fff;box-shadow:0 0 20px rgba(6,199,85,0.3);font-weight:900}
+.btn-line:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(6,199,85,0.5);color:#fff}
+.line-qr{display:inline-block;margin-top:1rem;font-size:.8rem;color:var(--gray)}
+
+/* SHORTS */
+.shorts-section{padding:5rem 0;max-width:1200px;margin:0 auto}
+.shorts-header{padding:0 2rem;margin-bottom:2rem}
+.shorts-scroll{display:flex;gap:1.2rem;overflow-x:auto;padding:0 2rem 1.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.shorts-scroll::-webkit-scrollbar{display:none}
+.short-card{flex:0 0 220px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);transition:all .3s;aspect-ratio:9/16}
+.short-card:hover{border-color:rgba(230,57,70,0.4);transform:translateY(-4px);box-shadow:0 8px 30px rgba(230,57,70,0.2)}
+.short-card video{width:100%;height:100%;object-fit:cover;display:block}
+.short-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(0,0,0,0.85));pointer-events:none}
+.short-card-ep{font-family:'Orbitron',sans-serif;font-size:.65rem;color:var(--cyan);letter-spacing:2px;margin-bottom:.3rem}
+.short-card-title{font-size:.8rem;font-weight:700;color:var(--white);line-height:1.4}
+.short-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(230,57,70,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;border:2px solid rgba(255,255,255,0.2)}
+.short-play-btn:hover{background:var(--red);transform:translate(-50%,-50%) scale(1.1);box-shadow:0 0 20px rgba(230,57,70,0.5)}
+.short-play-btn svg{fill:var(--white);margin-left:3px}
+.short-card.playing .short-play-btn{opacity:0}
+.short-card.playing:hover .short-play-btn{opacity:1}
+
+/* FLOATING PLAYER */
+.floating-player{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(5,5,8,0.95);border-top:1px solid rgba(30,215,96,0.2);transition:transform .4s ease}
+.floating-player.hidden{transform:translateY(100%)}
+.fp-wrap{max-width:1200px;margin:0 auto;position:relative;padding:0}
+.fp-wrap iframe{display:block;width:100%;border:none;border-radius:0}
+.fp-minimize{position:absolute;top:4px;right:8px;background:rgba(0,0,0,0.6);border:none;color:var(--gray);font-size:.7rem;cursor:pointer;padding:2px 6px;border-radius:4px;z-index:1;transition:color .3s;line-height:1}
+.fp-minimize:hover{color:var(--white)}
+
+/* SHARE BUTTONS */
+.share-section{text-align:center;padding:2.5rem 2rem;border-top:1px solid rgba(255,255,255,0.04)}
+.share-section p{color:var(--gray);font-size:.85rem;margin-bottom:1rem;font-weight:700}
+.share-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.2rem;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;transition:all .3s;border:1px solid rgba(255,255,255,0.1);color:var(--white);background:rgba(255,255,255,0.04)}
+.share-btn:hover{transform:translateY(-2px);text-decoration:none}
+.share-btn.x-share{border-color:rgba(255,255,255,0.2)}
+.share-btn.x-share:hover{background:rgba(255,255,255,0.1);box-shadow:0 4px 15px rgba(255,255,255,0.1)}
+.share-btn.line-share{border-color:rgba(6,199,85,0.3)}
+.share-btn.line-share:hover{background:rgba(6,199,85,0.1);box-shadow:0 4px 15px rgba(6,199,85,0.15)}
+.share-btn svg{flex-shrink:0}
+
+/* CTA PULSE */
+.btn-spotify{animation:ctaPulse 3s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{box-shadow:0 0 20px rgba(30,215,96,0.3)}50%{box-shadow:0 0 35px rgba(30,215,96,0.5),0 0 60px rgba(30,215,96,0.15)}}
+
+/* INLINE EMBED */
+.episode-embed{margin-top:.8rem;border-radius:12px;overflow:hidden}
+.episode-embed iframe{display:block;width:100%;border:none;border-radius:12px}
+.episode-item.has-embed{flex-direction:column;align-items:stretch}
+.episode-item.has-embed .episode-row{display:flex;align-items:center;gap:1.2rem}
+
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none;position:absolute;top:70px;left:0;right:0;background:rgba(5,5,8,0.98);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(0,240,255,0.1)}
+  nav ul.open{display:flex}
+  .hamburger{display:flex}
+  .personality-grid,.platform-grid{grid-template-columns:1fr}
+  .cta-group{flex-direction:column;align-items:center}
+  .btn{width:100%;max-width:320px;justify-content:center}
+  section{padding:3.5rem 1.5rem}
+  .concept-box{padding:2rem 1.5rem}
+  .jpa-box{padding:3rem 1.5rem}
+  .hero-artwork{width:180px;height:180px;border-radius:18px}
+  .episode-item{padding:1rem;gap:.8rem}
+  .episode-title{font-size:.85rem}
+  .ai-features{flex-direction:column;align-items:center}
+  .ai-feat{max-width:100%;min-width:0}
+  .short-card{flex:0 0 180px}
+  .shorts-header{padding:0 1.5rem}
+  .shorts-scroll{padding:0 1.5rem 1.5rem}
+  .line-cta{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo"><span class="logo-tag">PODCAST</span>オーモシロ・シュワルツェネッガー</a>
+    <ul id="navMenu">
+      <li><a href="#concept">CONCEPT</a></li>
+      <li><a href="#hosts">HOSTS</a></li>
+      <li><a href="#episodes">EPISODES</a></li>
+      <li><a href="#listen">LISTEN</a></li>
+      <li><a href="#jpa">JPA</a></li>
+      <li><a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener" class="nav-cta">&#9654; FOLLOW</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-artwork">
+      <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44924565/44924565-1772687358627-8ddaa3902034d.jpg" alt="オーモシロ・シュワルツェネッガー" width="240" height="240">
+    </div>
+    <div class="hero-badge">PODCAST / AI vs HUMAN</div>
+    <h1 class="hero-title glitch" data-text="オーモシロ・シュワルツェネッガー">オーモシロ・シュワルツェネッガー</h1>
+    <div class="hero-title-en">OMOSHIRO SCHWARZENEGGER</div>
+    <p class="hero-catch">AI vs 人間の真剣勝負。<br>声と筋肉は裏切らない。</p>
+    <p class="hero-sub">~ <em>AIに奪われない、どうでもいい力</em> ~</p>
+    <div class="cta-group">
+      <a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener" class="btn btn-spotify"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify でフォロー</a>
+      <a href="https://podcasts.apple.com/jp/podcast/id1755276160" target="_blank" rel="noopener" class="btn btn-apple"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .8C5.6.8.3 6.1.3 12.5c0 3.2 1.3 6 3.4 8.1.3.3.8.4 1.1.1.3-.3.4-.8.1-1.1-1.9-1.9-3-4.4-3-7.1 0-5.6 4.5-10.1 10.1-10.1s10.1 4.5 10.1 10.1c0 2.7-1.1 5.2-2.9 7.1-.3.3-.2.8.1 1.1.3.3.8.2 1.1-.1 2.1-2.1 3.4-5 3.4-8.1C23.7 6.1 18.4.8 12 .8zm0 3.6c-4 0-7.3 3.3-7.3 7.3 0 2 .8 3.9 2.2 5.2.3.3.8.3 1.1 0 .3-.3.3-.8 0-1.1-1.1-1.1-1.7-2.5-1.7-4.1 0-3.1 2.6-5.7 5.7-5.7s5.7 2.6 5.7 5.7c0 1.6-.6 3-1.7 4.1-.3.3-.3.8 0 1.1.3.3.8.3 1.1 0 1.4-1.4 2.2-3.2 2.2-5.2 0-4-3.3-7.3-7.3-7.3zm0 3.6c1.32 0 2.39 1.07 2.39 2.39 0 .96-.56 1.79-1.38 2.17-.19.09-.31.29-.31.51v.43c0 .3-.02.6-.07.89-.03.13-.14.22-.24.21h-.78c-.1.01-.21-.08-.24-.21-.05-.29-.07-.59-.07-.89v-.43c0-.22-.13-.42-.31-.51-.82-.38-1.38-1.21-1.38-2.17 0-1.32 1.07-2.39 2.39-2.39zm0 6.73c.27 0 .5.02.74.07.12.02.2.13.2.25v.7c0 .77-.07 1.54-.21 2.29-.03.14-.15.22-.28.2-.15-.01-.3-.01-.45 0-.15.01-.3.01-.45 0-.13.02-.25-.06-.28-.2-.14-.75-.21-1.52-.21-2.29v-.7c0-.12.08-.23.2-.25.24-.05.47-.07.74-.07z"/></svg> Apple Podcasts</a>
+      <a href="https://listen.style/p/omoshiro_schwarzenegger" target="_blank" rel="noopener" class="btn btn-listen"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm-1.5 15.5a1.5 1.5 0 11-3 0V10a1.5 1.5 0 013 0v6.5zm4 0a1.5 1.5 0 11-3 0V7.5a1.5 1.5 0 013 0v9zm4-2a1.5 1.5 0 11-3 0V8.5a1.5 1.5 0 013 0v6z"/></svg> LISTEN</a>
+      <a href="https://forms.gle/Fw7MaH2TSZpQac9t6" target="_blank" rel="noopener" class="btn btn-outline">&#9993; お便りを送る</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar fade-in">
+  <div class="stat"><span class="stat-num">14</span><span class="stat-label">EPISODES</span></div>
+  <div class="stat"><span class="stat-num">WEEKLY</span><span class="stat-label">UPDATE</span></div>
+  <div class="stat"><span class="stat-num">5+</span><span class="stat-label">PLATFORMS</span></div>
+  <div class="stat"><span class="stat-num">2025.12</span><span class="stat-label">SINCE</span></div>
+</div>
+
+<!-- CONCEPT -->
+<div class="vs-divider"><span class="vs-text">HUMAN vs AI</span></div>
+
+<section id="concept">
+  <div class="fade-in">
+    <div class="section-label">Concept</div>
+    <h2 class="section-title">番組コンセプト</h2>
+  </div>
+  <div class="concept-box fade-in">
+    <h3>AIに勝てる、くだらなさを探せ。</h3>
+    <p>
+      AIが文章を書き、絵を描き、コードを書き、音楽を作る時代。人間に残された最後の武器は何か？
+    </p>
+    <p>
+      それは、<strong>「声の温度」と「筋肉の説得力」</strong>。そして何より、<em>AIには絶対に理解できない「くだらなさ」</em>。
+    </p>
+    <p>
+      中学・高校の同級生である<strong>ミヤザワ</strong>と<strong>ナカジマ</strong>が、男子校ノリ全開で、お便りと日常のネタを武器に<strong>AIとガチで戦うポッドキャスト</strong>。それがオーモシロ・シュワルツェネッガー。
+    </p>
+    <p>
+      さらに、番組公式AI<em>「オモシュワくん」</em>が参戦。人間 vs AI の大喜利バトルも毎週開催中。<strong>あなたも共犯者として、この戦いに参加しないか？</strong>
+    </p>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<div class="vs-divider"><span class="vs-text">WHO ARE WE</span></div>
+
+<section id="hosts">
+  <div class="fade-in">
+    <div class="section-label">Personality</div>
+    <h2 class="section-title">パーソナリティ紹介</h2>
+    <p class="section-subtitle">中学・高校の同級生コンビが、AIに立ち向かう。</p>
+  </div>
+  <div class="personality-grid">
+    <div class="personality-card fade-in">
+      <div class="personality-avatar">&#127908;</div>
+      <h3>ミヤザワ</h3>
+      <div class="personality-role">Voice</div>
+      <p class="personality-desc"><strong>喋るのが大好き。</strong>無駄にいい声の持ち主。番組では進行と朗読を担当。嘘ニュースをキャスター顔負けのシリアスなトーンで読み上げ、リスナーを困惑させるのが至福の瞬間。<strong>AIが再現できない「声の温度」</strong>で人類側のエースを張る。</p>
+    </div>
+    <div class="personality-card fade-in">
+      <div class="personality-avatar">&#128170;</div>
+      <h3>ナカジマ</h3>
+      <div class="personality-role">Muscle</div>
+      <p class="personality-desc"><strong>筋肉が好きすぎる男。</strong>ジムに行かない日は存在しない。切れ味鋭いツッコミと、男子校時代の実体験に基づくフィジカルなトークが持ち味。<strong>AIが持てない「肉体の説得力」</strong>で番組の屋台骨を支える。</p>
+    </div>
+  </div>
+
+  <!-- AI CHARACTER -->
+  <div class="ai-card fade-in">
+    <h3>&#129302; オモシュワくん</h3>
+    <div class="ai-subtitle">ARTIFICIAL INTELLIGENCE &#8212; ENEMY OR ALLY?</div>
+    <p class="ai-desc">
+      番組の公式AI。<strong>男子校の全知識を持つ最強の男子校生AI</strong>。<br>
+      大喜利では人間に挑み、お便りに毒舌で返し、ナカジマを煽る。<br>
+      LINEで友だち追加すれば、いつでもこいつと勝負できる。<br>
+      <strong>果たして人間はAIに勝てるのか？</strong>
+    </p>
+    <div class="ai-features">
+      <div class="ai-feat"><div class="ai-feat-icon">&#9876;</div><div class="ai-feat-label">大喜利バトル</div></div>
+      <div class="ai-feat"><div class="ai-feat-icon">&#128172;</div><div class="ai-feat-label">毒舌トーク</div></div>
+      <div class="ai-feat"><div class="ai-feat-icon">&#128232;</div><div class="ai-feat-label">お便り参加</div></div>
+      <div class="ai-feat"><div class="ai-feat-icon">&#127942;</div><div class="ai-feat-label">番付ランキング</div></div>
+    </div>
+  </div>
+
+  <!-- LINE FRIEND ADD -->
+  <div class="line-cta fade-in">
+    <h3>&#128587; オモシュワくんとLINEで勝負する</h3>
+    <div class="line-subtitle">LINE OFFICIAL &#8212; TALK TO THE AI</div>
+    <p class="line-desc">
+      オモシュワくんに<strong>友だち追加</strong>して、直接メッセージを送ってみろ。<br>
+      大喜利を仕掛けるもよし、くだらない質問をぶつけるもよし。<br>
+      <strong>人間のくだらなさで、AIを黙らせてやれ。</strong>
+    </p>
+    <a href="https://lin.ee/84hpHq0" target="_blank" rel="noopener" class="btn btn-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386a.63.63 0 01-.63-.63V8.108a.63.63 0 01.63-.63h2.386c.349 0 .63.282.63.63 0 .349-.281.631-.63.631H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 01-.63.63.629.629 0 01-.51-.259l-2.443-3.317v2.946a.63.63 0 01-1.261 0V8.108a.63.63 0 01.63-.63c.201 0 .385.096.51.259l2.443 3.317V8.108a.63.63 0 011.261 0v4.771zm-5.741 0a.63.63 0 01-1.261 0V8.108a.63.63 0 011.261 0v4.771zm-2.304.63H4.879a.63.63 0 01-.63-.63V8.108a.63.63 0 011.261 0v4.141h2.955c.349 0 .63.283.63.63 0 .349-.281.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.084.922.258 1.058.593.12.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967C23.268 14.247 24 12.421 24 10.314z"/></svg> 友だち追加する</a>
+    <div class="line-qr">&#8593; タップして友だち追加 &#8212; 無料で使える</div>
+  </div>
+</section>
+
+<!-- SHORTS -->
+<div class="vs-divider"><span class="vs-text">SHORTS</span></div>
+
+<div class="shorts-section fade-in">
+  <div class="shorts-header">
+    <div class="section-label">YouTube Shorts</div>
+    <h2 class="section-title">切り抜きショート動画</h2>
+    <p class="section-subtitle">スワイプして気になるシーンをチェック。</p>
+  </div>
+  <div class="shorts-scroll">
+    <div class="short-card" data-video="shorts/clip01_%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%E3%81%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3.mp4">
+      <video src="shorts/clip01_%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%E3%81%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP07</div><div class="short-card-title">アバターはレストラン</div></div>
+    </div>
+    <div class="short-card" data-video="shorts/clip01_SNS%E5%88%B6%E9%99%90%E3%81%97%E3%81%9F%E3%82%89LINE%E3%81%8CX%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.mp4">
+      <video src="shorts/clip01_SNS%E5%88%B6%E9%99%90%E3%81%97%E3%81%9F%E3%82%89LINE%E3%81%8CX%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP06</div><div class="short-card-title">SNS制限したらLINEがXになった</div></div>
+    </div>
+    <div class="short-card" data-video="shorts/clip01_%E4%BF%9D%E9%99%BA%E7%9B%B8%E8%AB%87%E3%81%A7%E5%8F%B7%E6%B3%A3%E3%83%9D%E3%83%83%E3%82%B5%E3%83%A0.mp4">
+      <video src="shorts/clip01_%E4%BF%9D%E9%99%BA%E7%9B%B8%E8%AB%87%E3%81%A7%E5%8F%B7%E6%B3%A3%E3%83%9D%E3%83%83%E3%82%B5%E3%83%A0.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP05</div><div class="short-card-title">保険相談で号泣ポッサム</div></div>
+    </div>
+    <div class="short-card" data-video="shorts/clip01_%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%A7%E9%9B%A2%E5%A9%9A%E5%A0%B1%E5%91%8A.mp4">
+      <video src="shorts/clip01_%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%A7%E9%9B%A2%E5%A9%9A%E5%A0%B1%E5%91%8A.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP04</div><div class="short-card-title">結婚式で離婚報告</div></div>
+    </div>
+    <div class="short-card" data-video="shorts/clip01_%E5%A4%A7%E4%BA%BA%E3%81%8C%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E9%A3%B2%E3%82%93%E3%81%A7%E3%82%8B%E4%BB%B6.mp4">
+      <video src="shorts/clip01_%E5%A4%A7%E4%BA%BA%E3%81%8C%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E9%A3%B2%E3%82%93%E3%81%A7%E3%82%8B%E4%BB%B6.mp4#t=1" muted playsinline preload="metadata" poster="" loading="lazy"></video>
+      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP03</div><div class="short-card-title">大人が粉ミルク飲んでる件</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EPISODES -->
+<div class="vs-divider"><span class="vs-text">ALL EPISODES</span></div>
+
+<section id="episodes">
+  <div class="fade-in">
+    <div class="section-label">Episode Archive</div>
+    <h2 class="section-title">全エピソード一覧</h2>
+    <p class="section-subtitle">タップして各プラットフォームで聴く。全話無料。</p>
+  </div>
+  <div class="episode-list">
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/qc1n22m0" target="_blank" rel="noopener">
+      <span class="episode-num">EP14</span>
+      <div class="episode-info"><div class="episode-title">男子高校生AI「オモシュワくん」が爆誕！ナカジマを煽ってもらうとどうなる？</div><div class="episode-meta">2026-03-22 &#183; 45:58</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/sxweicfh" target="_blank" rel="noopener">
+      <span class="episode-num">EP13</span>
+      <div class="episode-info"><div class="episode-title">好きすぎて滅！の対義語をAIに考えてもらおう！</div><div class="episode-meta">2026-03-15 &#183; 31:25</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/sgo2xjuo" target="_blank" rel="noopener">
+      <span class="episode-num">EP12</span>
+      <div class="episode-info"><div class="episode-title">【実況あり】母のティラノサウルスレースをガチで応援しに行ってみた</div><div class="episode-meta">2026-03-15 &#183; 29:37</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/24ecbqeo" target="_blank" rel="noopener">
+      <span class="episode-num">EP11</span>
+      <div class="episode-info"><div class="episode-title">100回記念放送のゲストとスポンサーを考えてみよう！</div><div class="episode-meta">2026-03-02 &#183; 37:01</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/sufwdl7t" target="_blank" rel="noopener">
+      <span class="episode-num">EP10</span>
+      <div class="episode-info"><div class="episode-title">世界はそれをフラッシュモブと呼ぶんだぜ</div><div class="episode-meta">2026-02-23 &#183; 30:19</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/irg2yjka" target="_blank" rel="noopener">
+      <span class="episode-num">EP09</span>
+      <div class="episode-info"><div class="episode-title">プルデンシャルに花束を</div><div class="episode-meta">2026-02-20 &#183; 26:21</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/huj7mgpp" target="_blank" rel="noopener">
+      <span class="episode-num">EP08</span>
+      <div class="episode-info"><div class="episode-title">藤岡弘、がNHK朝ドラヒロインに抜擢された時のあるある</div><div class="episode-meta">2026-02-13 &#183; 51:31</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/dwxw43o8" target="_blank" rel="noopener">
+      <span class="episode-num">EP07</span>
+      <div class="episode-info"><div class="episode-title">ジェームズ・キャメロンへ愛を込めて</div><div class="episode-meta">2026-02-01 &#183; 31:54</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/fut0zsry" target="_blank" rel="noopener">
+      <span class="episode-num">EP06</span>
+      <div class="episode-info"><div class="episode-title">出雲大社だと思ったらEZ DO 大社だったときのあるある</div><div class="episode-meta">2026-01-12 &#183; 32:13</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/40m0cbuv" target="_blank" rel="noopener">
+      <span class="episode-num">EP05</span>
+      <div class="episode-info"><div class="episode-title">ジングル大募集中！2026年新春スペシャル</div><div class="episode-meta">2026-01-08 &#183; 53:32</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/grusdhwo" target="_blank" rel="noopener">
+      <span class="episode-num">EP04</span>
+      <div class="episode-info"><div class="episode-title">ゆく年くる年...年末エッホエッホSP！</div><div class="episode-meta">2025-12-30 &#183; 47:27</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/5fiepx55" target="_blank" rel="noopener">
+      <span class="episode-num">EP03</span>
+      <div class="episode-info"><div class="episode-title">徹夜の数だけ強くなれるよ</div><div class="episode-meta">2025-12-28 &#183; 43:39</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/3c8dq5bo" target="_blank" rel="noopener">
+      <span class="episode-num">EP02</span>
+      <div class="episode-info"><div class="episode-title">結婚式で通せんぼされる28の春</div><div class="episode-meta">2025-12-18 &#183; 26:59</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+    <a class="episode-item fade-in" href="https://listen.style/p/omoshiro_schwarzenegger/vylzbzra" target="_blank" rel="noopener">
+      <span class="episode-num">EP01</span>
+      <div class="episode-info"><div class="episode-title">始動</div><div class="episode-meta">2025-12-14 &#183; 30:48</div></div>
+      <span class="episode-play">&#9654;</span>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:2rem">
+    <a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener" class="btn btn-spotify">&#9654; Spotify で全話聴く</a>
+  </div>
+</section>
+
+<!-- FOLLOW BANNER -->
+<div class="follow-banner fade-in">
+  <p><strong>まだフォローしてない？</strong> &#8212; フォローすると最新回が自動で届きます</p>
+  <a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener" class="btn btn-spotify">&#9654; Spotify で番組をフォロー</a>
+</div>
+
+<!-- PLATFORMS -->
+<section id="listen">
+  <div class="fade-in">
+    <div class="section-label">Listen Everywhere</div>
+    <h2 class="section-title">配信プラットフォーム</h2>
+    <p class="section-subtitle">お好きな場所で、AIとの戦いに参加してください。</p>
+  </div>
+  <div class="platform-grid fade-in">
+    <a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot s"></span>Spotify<span class="platform-arrow">&#8594;</span></a>
+    <a href="https://podcasts.apple.com/jp/podcast/id1755276160" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot a"></span>Apple Podcasts<span class="platform-arrow">&#8594;</span></a>
+    <a href="https://listen.style/p/omoshiro_schwarzenegger" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot l"></span>LISTEN<span class="platform-arrow">&#8594;</span></a>
+    <a href="https://music.amazon.co.jp/podcasts" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot m"></span>Amazon Music<span class="platform-arrow">&#8594;</span></a>
+    <a href="https://www.youtube.com/playlist?list=PLqJkU2vxKpHp5nTgOjL0Y8JZRF89NbH7r" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot y"></span>YouTube Shorts<span class="platform-arrow">&#8594;</span></a>
+    <a href="https://forms.gle/Fw7MaH2TSZpQac9t6" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot" style="background:var(--cyan);box-shadow:0 0 8px rgba(0,240,255,0.5)"></span>&#9993; お便りを送る<span class="platform-arrow">&#8594;</span></a>
+  </div>
+</section>
+
+<!-- JPA -->
+<div class="vs-divider"><span class="vs-text">AWARD</span></div>
+
+<section id="jpa" style="text-align:center">
+  <div class="jpa-box fade-in">
+    <div class="section-label" style="opacity:1">Japan Podcast Awards</div>
+    <h3>ジャパンポッドキャストアワード<br>第8回 一般クリエイター部門</h3>
+    <div class="countdown" id="jpaDays">---</div>
+    <div class="countdown-label">投票開始まで</div>
+    <p>
+      人間の「くだらなさ」が、AIに勝てることを証明する。そのために、まずはこのアワードを獲る。番組を聴いて広めてくれるだけで、それが最大の応援になる。
+    </p>
+    <a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener" class="btn btn-primary">&#9654; 番組を聴いて応援する</a>
+  </div>
+</section>
+
+<!-- SHARE -->
+<div class="share-section fade-in">
+  <p>この番組を広めてくれると、人類側の戦力になる。</p>
+  <div class="share-btns">
+    <a href="https://twitter.com/intent/tweet?text=%E3%82%AA%E3%83%BC%E3%83%A2%E3%82%B7%E3%83%AD%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%AF%E3%83%AB%E3%83%84%E3%82%A7%E3%83%8D%E3%83%83%E3%82%AC%E3%83%BC%20%E2%80%95%20AI%20vs%20%E4%BA%BA%E9%96%93%E3%81%AE%E7%9C%9F%E5%89%A3%E5%8B%9D%E8%B2%A0%E3%83%9D%E3%83%83%E3%83%89%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88%20%23%E3%82%AA%E3%83%A2%E3%82%B7%E3%83%A5%E3%83%AF%20%23AIvs%E4%BA%BA%E9%96%93&url=https%3A%2F%2Fnakazi555.github.io%2Fomoshu-bot%2F" target="_blank" rel="noopener" class="share-btn x-share"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X (Twitter) でシェア</a>
+    <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnakazi555.github.io%2Fomoshu-bot%2F" target="_blank" rel="noopener" class="share-btn line-share"><svg width="16" height="16" viewBox="0 0 24 24" fill="#06c755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386a.63.63 0 01-.63-.63V8.108a.63.63 0 01.63-.63h2.386c.349 0 .63.282.63.63 0 .349-.281.631-.63.631H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 01-.63.63.629.629 0 01-.51-.259l-2.443-3.317v2.946a.63.63 0 01-1.261 0V8.108a.63.63 0 01.63-.63c.201 0 .385.096.51.259l2.443 3.317V8.108a.63.63 0 011.261 0v4.771zm-5.741 0a.63.63 0 01-1.261 0V8.108a.63.63 0 011.261 0v4.771zm-2.304.63H4.879a.63.63 0 01-.63-.63V8.108a.63.63 0 011.261 0v4.141h2.955c.349 0 .63.283.63.63 0 .349-.281.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.084.922.258 1.058.593.12.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967C23.268 14.247 24 12.421 24 10.314z"/></svg> LINE でシェア</a>
+  </div>
+</div>
+
+<!-- HASHTAGS -->
+<div style="text-align:center;padding:2rem">
+  <div class="hashtags">
+    <span>#オモシュワ</span>
+    <span>#AIvs人間</span>
+    <span>#声と筋肉</span>
+    <span>#ポッドキャスト</span>
+    <span>#男子校ノリ</span>
+    <span>#大喜利バトル</span>
+    <span>#JPA2027</span>
+  </div>
+</div>
+
+<!-- FLOATING PLAYER -->
+<div class="floating-player" id="floatingPlayer">
+  <div class="fp-wrap">
+    <button class="fp-minimize" id="fpMinimize" aria-label="最小化">&#10005;</button>
+    <iframe src="https://open.spotify.com/embed/show/56OB1eYPQ9UdhKkNwn091a?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify Player"></iframe>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">オーモシロ・シュワルツェネッガー</div>
+  <div class="footer-links">
+    <a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener">Spotify</a>
+    <a href="https://podcasts.apple.com/jp/podcast/id1755276160" target="_blank" rel="noopener">Apple</a>
+    <a href="https://listen.style/p/omoshiro_schwarzenegger" target="_blank" rel="noopener">LISTEN</a>
+    <a href="https://forms.gle/Fw7MaH2TSZpQac9t6" target="_blank" rel="noopener">&#9993; お便り</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 オーモシロ・シュワルツェネッガー. All rights reserved.</div>
+</footer>
+
+<script>
+/* Particles */
+(function(){
+  var c=document.getElementById('particles');if(!c)return;
+  for(var i=0;i<30;i++){
+    var p=document.createElement('div');p.className='particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDuration=(8+Math.random()*12)+'s';
+    p.style.animationDelay=Math.random()*8+'s';
+    var s=Math.random()>.7?'var(--red)':Math.random()>.4?'var(--cyan)':'var(--green)';
+    p.style.background=s;
+    p.style.width=p.style.height=(1+Math.random()*2)+'px';
+    c.appendChild(p);
+  }
+})();
+
+/* Hamburger */
+(function(){
+  var menu=document.getElementById('navMenu');
+  var btn=document.getElementById('hamburgerBtn');
+  btn.addEventListener('click',function(){menu.classList.toggle('open');btn.classList.toggle('active')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.classList.remove('active')})});
+})();
+
+/* Fade-in Observer */
+(function(){
+  var els=document.querySelectorAll('.fade-in');
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('visible')});return}
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+  },{threshold:0.1});
+  els.forEach(function(el){obs.observe(el)});
+})();
+
+/* Shorts toggle */
+function toggleShort(btn){
+  var card=btn.closest('.short-card');
+  var vid=card.querySelector('video');
+  if(vid.paused){
+    document.querySelectorAll('.short-card video').forEach(function(v){v.pause();v.closest('.short-card').classList.remove('playing')});
+    vid.play();card.classList.add('playing');
+  }else{
+    vid.pause();card.classList.remove('playing');
+  }
+}
+
+/* JPA Countdown */
+(function(){
+  var el=document.getElementById('jpaDays');if(!el)return;
+  var target=new Date('2026-12-01T00:00:00+09:00');
+  var now=new Date();
+  var diff=Math.max(0,Math.ceil((target-now)/(1000*60*60*24)));
+  el.textContent=diff+' DAYS';
+})();
+
+/* Floating Player minimize */
+(function(){
+  var fp=document.getElementById('floatingPlayer');
+  var btn=document.getElementById('fpMinimize');
+  if(!fp||!btn)return;
+  btn.addEventListener('click',function(){fp.classList.add('hidden')});
+})();
+</script>
+
+</body>
+</html>
