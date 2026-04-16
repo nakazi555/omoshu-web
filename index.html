@@ -48,6 +48,14 @@
   "genre": ["Comedy", "Technology"],
   "inLanguage": "ja",
   "numberOfEpisodes": 15,
+  "hasPart": [
+    {"@type": "VideoObject", "name": "公園のキャッチボール、助けるべき？", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/7521wbzb3oc/oar2.jpg", "contentUrl": "https://youtube.com/shorts/7521wbzb3oc", "uploadDate": "2026-04-02"},
+    {"@type": "VideoObject", "name": "奥さんに相談してみた結果", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/CmqIm2fCOGI/oar2.jpg", "contentUrl": "https://youtube.com/shorts/CmqIm2fCOGI", "uploadDate": "2026-04-03"},
+    {"@type": "VideoObject", "name": "バウンディの2045年", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/BHMqU2N19Bo/oar2.jpg", "contentUrl": "https://youtube.com/shorts/BHMqU2N19Bo", "uploadDate": "2026-04-04"},
+    {"@type": "VideoObject", "name": "お便りフォーム、まさかの事態", "description": "EP02切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/MtSQfKaXP04/oar2.jpg", "contentUrl": "https://youtube.com/shorts/MtSQfKaXP04", "uploadDate": "2026-04-11"},
+    {"@type": "VideoObject", "name": "お耳汚し、まさかの新造語？", "description": "EP02切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/JWMbujWqvrs/oar2.jpg", "contentUrl": "https://youtube.com/shorts/JWMbujWqvrs", "uploadDate": "2026-04-12"},
+    {"@type": "VideoObject", "name": "愛媛は地中海？", "description": "EP02切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/2SHcQhMkwFk/oar2.jpg", "contentUrl": "https://youtube.com/shorts/2SHcQhMkwFk", "uploadDate": "2026-04-13"}
+  ],
   "sameAs": [
     "https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a",
     "https://podcasts.apple.com/jp/podcast/id1755276160",
@@ -268,19 +276,22 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 /* SHORTS */
 .shorts-section{padding:5rem 0;max-width:1200px;margin:0 auto}
 .shorts-header{padding:0 2rem;margin-bottom:2rem}
-.shorts-scroll{display:flex;gap:1.2rem;overflow-x:auto;padding:0 2rem 1.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.shorts-scroll::-webkit-scrollbar{display:none}
-.short-card{flex:0 0 220px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);transition:all .3s;aspect-ratio:9/16}
+.shorts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;padding:0 2rem}
+.short-card{border-radius:16px;overflow:hidden;position:relative;background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);transition:all .3s;cursor:pointer}
 .short-card:hover{border-color:rgba(230,57,70,0.4);transform:translateY(-4px);box-shadow:0 8px 30px rgba(230,57,70,0.2)}
-.short-card video{width:100%;height:100%;object-fit:cover;display:block}
-.short-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(0,0,0,0.85));pointer-events:none}
+.short-card-thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:#111}
+.short-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s}
+.short-card-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:none}
+.short-card.active .short-card-thumb img{opacity:0}
+.short-card.active .short-card-thumb iframe{display:block}
+.short-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(0,0,0,0.85));pointer-events:none;z-index:1}
 .short-card-ep{font-family:'Orbitron',sans-serif;font-size:.65rem;color:var(--cyan);letter-spacing:2px;margin-bottom:.3rem}
 .short-card-title{font-size:.8rem;font-weight:700;color:var(--white);line-height:1.4}
-.short-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(230,57,70,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;border:2px solid rgba(255,255,255,0.2)}
+.short-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(230,57,70,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;border:2px solid rgba(255,255,255,0.2);z-index:2}
 .short-play-btn:hover{background:var(--red);transform:translate(-50%,-50%) scale(1.1);box-shadow:0 0 20px rgba(230,57,70,0.5)}
 .short-play-btn svg{fill:var(--white);margin-left:3px}
-.short-card.playing .short-play-btn{opacity:0}
-.short-card.playing:hover .short-play-btn{opacity:1}
+.short-card.active .short-play-btn{display:none}
+.short-card.active .short-card-overlay{opacity:0}
 
 /* FLOATING PLAYER */
 .floating-player{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(5,5,8,0.95);border-top:1px solid rgba(30,215,96,0.2);transition:transform .4s ease}
@@ -329,9 +340,8 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   .ai-feat{flex:1 1 40%;max-width:48%;min-width:0;padding:.7rem .8rem}
   .ai-feat-icon{font-size:1.2rem}
   .ai-feat-label{font-size:.7rem}
-  .short-card{flex:0 0 180px}
+  .shorts-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.8rem;padding:0 1.5rem}
   .shorts-header{padding:0 1.5rem}
-  .shorts-scroll{padding:0 1.5rem 1.5rem}
   .line-cta{padding:2rem 1.5rem}
 }
 </style>
@@ -345,6 +355,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <ul id="navMenu">
       <li><a href="#concept">CONCEPT</a></li>
       <li><a href="#hosts">HOSTS</a></li>
+      <li><a href="#shorts">SHORTS</a></li>
       <li><a href="#episodes">EPISODES</a></li>
       <li><a href="#listen">LISTEN</a></li>
       <li><a href="#jpa">JPA</a></li>
@@ -379,7 +390,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 
 <!-- STATS BAR -->
 <div class="stats-bar fade-in">
-  <div class="stat"><span class="stat-num">14</span><span class="stat-label">EPISODES</span></div>
+  <div class="stat"><span class="stat-num">15</span><span class="stat-label">EPISODES</span></div>
   <div class="stat"><span class="stat-num">WEEKLY</span><span class="stat-label">UPDATE</span></div>
   <div class="stat"><span class="stat-num">5+</span><span class="stat-label">PLATFORMS</span></div>
   <div class="stat"><span class="stat-num">2025.12</span><span class="stat-label">SINCE</span></div>
@@ -448,37 +459,96 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 <!-- SHORTS -->
 <div class="vs-divider"><span class="vs-text">SHORTS</span></div>
 
-<div class="shorts-section fade-in">
+<div class="shorts-section fade-in" id="shorts">
   <div class="shorts-header">
     <div class="section-label">YouTube Shorts</div>
     <h2 class="section-title">切り抜きショート動画</h2>
-    <p class="section-subtitle">スワイプして気になるシーンをチェック。</p>
+    <p class="section-subtitle">タップして再生。本編が気になったらSpotifyへ。</p>
   </div>
-  <div class="shorts-scroll">
-    <div class="short-card" data-video="shorts/clip01_%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%E3%81%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3.mp4">
-      <video src="shorts/clip01_%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%E3%81%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
-      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP07</div><div class="short-card-title">アバターはレストラン</div></div>
+  <div class="shorts-grid">
+    <div class="short-card" data-yt="7521wbzb3oc" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/7521wbzb3oc/oar2.jpg" alt="公園のキャッチボール、助けるべき？" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">公園のキャッチボール、助けるべき？</div></div>
     </div>
-    <div class="short-card" data-video="shorts/clip01_SNS%E5%88%B6%E9%99%90%E3%81%97%E3%81%9F%E3%82%89LINE%E3%81%8CX%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.mp4">
-      <video src="shorts/clip01_SNS%E5%88%B6%E9%99%90%E3%81%97%E3%81%9F%E3%82%89LINE%E3%81%8CX%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
-      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP06</div><div class="short-card-title">SNS制限したらLINEがXになった</div></div>
+    <div class="short-card" data-yt="CmqIm2fCOGI" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/CmqIm2fCOGI/oar2.jpg" alt="奥さんに相談してみた結果" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">奥さんに相談してみた結果</div></div>
     </div>
-    <div class="short-card" data-video="shorts/clip01_%E4%BF%9D%E9%99%BA%E7%9B%B8%E8%AB%87%E3%81%A7%E5%8F%B7%E6%B3%A3%E3%83%9D%E3%83%83%E3%82%B5%E3%83%A0.mp4">
-      <video src="shorts/clip01_%E4%BF%9D%E9%99%BA%E7%9B%B8%E8%AB%87%E3%81%A7%E5%8F%B7%E6%B3%A3%E3%83%9D%E3%83%83%E3%82%B5%E3%83%A0.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
-      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP05</div><div class="short-card-title">保険相談で号泣ポッサム</div></div>
+    <div class="short-card" data-yt="BHMqU2N19Bo" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/BHMqU2N19Bo/oar2.jpg" alt="バウンディの2045年" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">バウンディの2045年</div></div>
     </div>
-    <div class="short-card" data-video="shorts/clip01_%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%A7%E9%9B%A2%E5%A9%9A%E5%A0%B1%E5%91%8A.mp4">
-      <video src="shorts/clip01_%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%A7%E9%9B%A2%E5%A9%9A%E5%A0%B1%E5%91%8A.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
-      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP04</div><div class="short-card-title">結婚式で離婚報告</div></div>
+    <div class="short-card" data-yt="pxpdfJbuhFE" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/pxpdfJbuhFE/oar2.jpg" alt="黒歴史「着メロ」にツッコミ" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">黒歴史「着メロ」にツッコミ</div></div>
     </div>
-    <div class="short-card" data-video="shorts/clip01_%E5%A4%A7%E4%BA%BA%E3%81%8C%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E9%A3%B2%E3%82%93%E3%81%A7%E3%82%8B%E4%BB%B6.mp4">
-      <video src="shorts/clip01_%E5%A4%A7%E4%BA%BA%E3%81%8C%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E9%A3%B2%E3%82%93%E3%81%A7%E3%82%8B%E4%BB%B6.mp4#t=1" playsinline preload="metadata" poster="" loading="lazy"></video>
-      <div class="short-play-btn" onclick="toggleShort(this)"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP03</div><div class="short-card-title">大人が粉ミルク飲んでる件</div></div>
+    <div class="short-card" data-yt="EHMM9Xy3FL0" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/EHMM9Xy3FL0/oar2.jpg" alt="遊戯王コピーカードの黒歴史" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">遊戯王コピーカードの黒歴史</div></div>
+    </div>
+    <div class="short-card" data-yt="NzB3Z-qXbqY" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/NzB3Z-qXbqY/oar2.jpg" alt="横断歩道が自我に目覚めた日" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">横断歩道が自我に目覚めた日</div></div>
+    </div>
+    <div class="short-card" data-yt="wDmGwl6BrC0" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/wDmGwl6BrC0/oar2.jpg" alt="ことわざが消滅する日" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">ことわざが消滅する日</div></div>
+    </div>
+    <div class="short-card" data-yt="sA25RcLWq5I" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/sA25RcLWq5I/oar2.jpg" alt="スーパー戦隊、終了...？" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">スーパー戦隊、終了...？</div></div>
+    </div>
+    <div class="short-card" data-yt="hJhPmTfKEf0" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/hJhPmTfKEf0/oar2.jpg" alt="追加戦士は〇〇〇" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">追加戦士は〇〇〇</div></div>
+    </div>
+    <div class="short-card" data-yt="MtSQfKaXP04" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/MtSQfKaXP04/oar2.jpg" alt="お便りフォーム、まさかの事態" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">お便りフォーム、まさかの事態</div></div>
+    </div>
+    <div class="short-card" data-yt="JWMbujWqvrs" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/JWMbujWqvrs/oar2.jpg" alt="お耳汚し、まさかの新造語？" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">お耳汚し、まさかの新造語？</div></div>
+    </div>
+    <div class="short-card" data-yt="2SHcQhMkwFk" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/2SHcQhMkwFk/oar2.jpg" alt="愛媛は地中海？" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">愛媛は地中海？</div></div>
     </div>
   </div>
 </div>
@@ -493,6 +563,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <p class="section-subtitle">タップするとその場で再生できます。全話無料。</p>
   </div>
   <div class="episode-list">
+    <div class="episode-item fade-in" data-spotify="5VhfSLJSouLhxROnNVahdI" onclick="toggleEpEmbed(this)">
+      <div class="episode-row"><span class="episode-num">EP15</span><div class="episode-info"><div class="episode-title">ミヤザワベイビー爆誕！一方その頃ナカジマは...のんきにレンタル・ファミリーを観ていた</div><div class="episode-meta">2026-04-05 &#183; 35:00</div></div><span class="episode-play">&#9654;</span></div>
+      <div class="episode-embed"></div>
+    </div>
     <div class="episode-item fade-in" data-spotify="6n69ZXDUfZBrpjwgwWfzpA" onclick="toggleEpEmbed(this)">
       <div class="episode-row"><span class="episode-num">EP14</span><div class="episode-info"><div class="episode-title">男子高校生AI「オモシュワくん」が爆誕！ナカジマを煽ってもらうとどうなる？</div><div class="episode-meta">2026-03-22 &#183; 45:58</div></div><span class="episode-play">&#9654;</span></div>
       <div class="episode-embed"></div>
@@ -670,30 +744,26 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   els.forEach(function(el){obs.observe(el)});
 })();
 
-/* Shorts toggle */
-var playSVG='<polygon points="6,3 20,12 6,21"/>';
-var pauseSVG='<rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/>';
-function updateBtn(card,playing){
-  var svg=card.querySelector('.short-play-btn svg');
-  if(svg) svg.innerHTML=playing?pauseSVG:playSVG;
+/* YouTube Shorts play */
+function playShort(card){
+  if(card.classList.contains('active'))return;
+  /* Stop any other playing shorts */
+  document.querySelectorAll('.short-card.active').forEach(function(c){
+    var ifr=c.querySelector('iframe');if(ifr)ifr.remove();
+    c.classList.remove('active');
+  });
+  var ytId=card.getAttribute('data-yt');
+  if(!ytId)return;
+  var thumb=card.querySelector('.short-card-thumb');
+  var ifr=document.createElement('iframe');
+  ifr.src='https://www.youtube.com/embed/'+ytId+'?autoplay=1&loop=1&playlist='+ytId;
+  ifr.allow='autoplay; encrypted-media';
+  ifr.allowFullscreen=true;
+  ifr.loading='lazy';
+  ifr.title='YouTube Short';
+  thumb.appendChild(ifr);
+  card.classList.add('active');
 }
-function toggleShort(btn){
-  var card=btn.closest('.short-card');
-  var vid=card.querySelector('video');
-  if(vid.paused){
-    document.querySelectorAll('.short-card').forEach(function(c){
-      var v=c.querySelector('video');v.pause();c.classList.remove('playing');updateBtn(c,false);
-    });
-    vid.play();card.classList.add('playing');updateBtn(card,true);
-  }else{
-    vid.pause();card.classList.remove('playing');updateBtn(card,false);
-  }
-}
-
-/* Reset icon when video ends */
-document.querySelectorAll('.short-card video').forEach(function(v){
-  v.addEventListener('ended',function(){var c=this.closest('.short-card');c.classList.remove('playing');updateBtn(c,false)});
-});
 
 /* Episode inline Spotify embed */
 function toggleEpEmbed(item){
