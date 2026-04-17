@@ -49,12 +49,12 @@
   "inLanguage": "ja",
   "numberOfEpisodes": 15,
   "hasPart": [
-    {"@type": "VideoObject", "name": "公園の親子、助ける？助けない？", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/7521wbzb3oc/oar2.jpg", "contentUrl": "https://youtube.com/shorts/7521wbzb3oc", "uploadDate": "2026-04-02"},
-    {"@type": "VideoObject", "name": "キャッチャー問題、奥さん次第。", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/BN-IJxYQ24g/oar2.jpg", "contentUrl": "https://youtube.com/shorts/BN-IJxYQ24g", "uploadDate": "2026-04-03"},
-    {"@type": "VideoObject", "name": "2045年のバウンディの末路。", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/freG4rotQko/oar2.jpg", "contentUrl": "https://youtube.com/shorts/freG4rotQko", "uploadDate": "2026-04-04"},
+    {"@type": "VideoObject", "name": "スーパー戦隊、まさかの終了！？", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/FuT_kkjqQEk/oar2.jpg", "contentUrl": "https://youtube.com/shorts/FuT_kkjqQEk", "uploadDate": "2026-04-10"},
+    {"@type": "VideoObject", "name": "ことわざ『馬の耳に念仏』消滅。", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/LHL4W6ZKLjc/oar2.jpg", "contentUrl": "https://youtube.com/shorts/LHL4W6ZKLjc", "uploadDate": "2026-04-08"},
+    {"@type": "VideoObject", "name": "疫病戦隊、追加戦士はまさかの...", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/Oik3_ObmzfE/oar2.jpg", "contentUrl": "https://youtube.com/shorts/Oik3_ObmzfE", "uploadDate": "2026-04-10"},
     {"@type": "VideoObject", "name": "お便り0件でした", "description": "EP02切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/OSwnnXps5OE/oar2.jpg", "contentUrl": "https://youtube.com/shorts/OSwnnXps5OE", "uploadDate": "2026-04-11"},
-    {"@type": "VideoObject", "name": "「お耳汚し」って何？", "description": "EP02切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/C3_rW8XX6wk/oar2.jpg", "contentUrl": "https://youtube.com/shorts/C3_rW8XX6wk", "uploadDate": "2026-04-12"},
-    {"@type": "VideoObject", "name": "愛媛は地中海？", "description": "EP02切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/vgsrhWyjACw/oar2.jpg", "contentUrl": "https://youtube.com/shorts/vgsrhWyjACw", "uploadDate": "2026-04-13"}
+    {"@type": "VideoObject", "name": "遊戯王コピーカード職人の末路。", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/XLScKKeg8YY/oar2.jpg", "contentUrl": "https://youtube.com/shorts/XLScKKeg8YY", "uploadDate": "2026-04-06"},
+    {"@type": "VideoObject", "name": "2045年のバウンディの末路。", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/freG4rotQko/oar2.jpg", "contentUrl": "https://youtube.com/shorts/freG4rotQko", "uploadDate": "2026-04-04"}
   ],
   "sameAs": [
     "https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a",
@@ -344,6 +344,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   .shorts-header{padding:0 1.5rem}
   .line-cta{padding:2rem 1.5rem}
 }
+
+/* Popular badge */
+.short-card.popular{box-shadow:0 0 0 2px var(--main);}
+.short-card-badge{position:absolute;top:8px;right:8px;background:var(--main);color:#fff;font-size:0.7rem;font-weight:700;padding:2px 8px;border-radius:20px;z-index:2;}
 </style>
 </head>
 <body>
@@ -466,6 +470,55 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <p class="section-subtitle">タップして再生。本編が気になったらSpotifyへ。</p>
   </div>
   <div class="shorts-grid">
+    <div class="short-card popular" data-yt="FuT_kkjqQEk" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/FuT_kkjqQEk/oar2.jpg" alt="スーパー戦隊、まさかの終了！？" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-badge">2,206再生</div><div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">スーパー戦隊、まさかの終了！？</div></div>
+    </div>
+    <div class="short-card popular" data-yt="LHL4W6ZKLjc" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/LHL4W6ZKLjc/oar2.jpg" alt="ことわざ『馬の耳に念仏』消滅。" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-badge">1,614再生</div><div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">ことわざ『馬の耳に念仏』消滅。</div></div>
+    </div>
+    <div class="short-card popular" data-yt="Oik3_ObmzfE" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/Oik3_ObmzfE/oar2.jpg" alt="疫病戦隊、追加戦士はまさかの..." loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-badge">1,434再生</div><div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">疫病戦隊、追加戦士はまさかの...</div></div>
+    </div>
+    <div class="short-card" data-yt="OSwnnXps5OE" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/OSwnnXps5OE/oar2.jpg" alt="お便り0件でした" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">お便り0件でした</div></div>
+    </div>
+    <div class="short-card" data-yt="XLScKKeg8YY" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/XLScKKeg8YY/oar2.jpg" alt="遊戯王コピーカード職人の末路。" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">遊戯王コピーカード職人の末路。</div></div>
+    </div>
+    <div class="short-card" data-yt="freG4rotQko" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/freG4rotQko/oar2.jpg" alt="2045年のバウンディの末路。" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">2045年のバウンディの末路。</div></div>
+    </div>
+    <div class="short-card" data-yt="C3_rW8XX6wk" onclick="playShort(this)">
+      <div class="short-card-thumb">
+        <img src="https://i.ytimg.com/vi/C3_rW8XX6wk/oar2.jpg" alt="「お耳汚し」って何？" loading="lazy" width="200" height="356">
+      </div>
+      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">「お耳汚し」って何？</div></div>
+    </div>
     <div class="short-card" data-yt="7521wbzb3oc" onclick="playShort(this)">
       <div class="short-card-thumb">
         <img src="https://i.ytimg.com/vi/7521wbzb3oc/oar2.jpg" alt="公園の親子、助ける？助けない？" loading="lazy" width="200" height="356">
@@ -480,13 +533,6 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
       <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">キャッチャー問題、奥さん次第。</div></div>
     </div>
-    <div class="short-card" data-yt="freG4rotQko" onclick="playShort(this)">
-      <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/freG4rotQko/oar2.jpg" alt="2045年のバウンディの末路。" loading="lazy" width="200" height="356">
-      </div>
-      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">2045年のバウンディの末路。</div></div>
-    </div>
     <div class="short-card" data-yt="G__bUAARMuA" onclick="playShort(this)">
       <div class="short-card-thumb">
         <img src="https://i.ytimg.com/vi/G__bUAARMuA/oar2.jpg" alt="黒歴史着メロ、キモすぎて草。" loading="lazy" width="200" height="356">
@@ -494,12 +540,12 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
       <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">黒歴史着メロ、キモすぎて草。</div></div>
     </div>
-    <div class="short-card" data-yt="XLScKKeg8YY" onclick="playShort(this)">
+    <div class="short-card" data-yt="vgsrhWyjACw" onclick="playShort(this)">
       <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/XLScKKeg8YY/oar2.jpg" alt="遊戯王コピーカード職人の末路。" loading="lazy" width="200" height="356">
+        <img src="https://i.ytimg.com/vi/vgsrhWyjACw/oar2.jpg" alt="愛媛は地中海？" loading="lazy" width="200" height="356">
       </div>
       <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">遊戯王コピーカード職人の末路。</div></div>
+      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">愛媛は地中海？</div></div>
     </div>
     <div class="short-card" data-yt="ZvxiOzRw-6c" onclick="playShort(this)">
       <div class="short-card-thumb">
@@ -507,48 +553,6 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
       </div>
       <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
       <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">横断歩道、自我に目覚める。</div></div>
-    </div>
-    <div class="short-card" data-yt="LHL4W6ZKLjc" onclick="playShort(this)">
-      <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/LHL4W6ZKLjc/oar2.jpg" alt="ことわざ『馬の耳に念仏』消滅。" loading="lazy" width="200" height="356">
-      </div>
-      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">ことわざ『馬の耳に念仏』消滅。</div></div>
-    </div>
-    <div class="short-card" data-yt="FuT_kkjqQEk" onclick="playShort(this)">
-      <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/FuT_kkjqQEk/oar2.jpg" alt="スーパー戦隊、まさかの終了！？" loading="lazy" width="200" height="356">
-      </div>
-      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">スーパー戦隊、まさかの終了！？</div></div>
-    </div>
-    <div class="short-card" data-yt="Oik3_ObmzfE" onclick="playShort(this)">
-      <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/Oik3_ObmzfE/oar2.jpg" alt="疫病戦隊、追加戦士はまさかの..." loading="lazy" width="200" height="356">
-      </div>
-      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP01</div><div class="short-card-title">疫病戦隊、追加戦士はまさかの...</div></div>
-    </div>
-    <div class="short-card" data-yt="OSwnnXps5OE" onclick="playShort(this)">
-      <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/OSwnnXps5OE/oar2.jpg" alt="お便り0件でした" loading="lazy" width="200" height="356">
-      </div>
-      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">お便り0件でした</div></div>
-    </div>
-    <div class="short-card" data-yt="C3_rW8XX6wk" onclick="playShort(this)">
-      <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/C3_rW8XX6wk/oar2.jpg" alt="「お耳汚し」って何？" loading="lazy" width="200" height="356">
-      </div>
-      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">「お耳汚し」って何？</div></div>
-    </div>
-    <div class="short-card" data-yt="vgsrhWyjACw" onclick="playShort(this)">
-      <div class="short-card-thumb">
-        <img src="https://i.ytimg.com/vi/vgsrhWyjACw/oar2.jpg" alt="愛媛は地中海？" loading="lazy" width="200" height="356">
-      </div>
-      <div class="short-play-btn"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-      <div class="short-card-overlay"><div class="short-card-ep">EP02</div><div class="short-card-title">愛媛は地中海？</div></div>
     </div>
   </div>
 </div>
