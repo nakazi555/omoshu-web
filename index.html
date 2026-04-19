@@ -143,10 +143,12 @@ nav ul li a:hover::after{width:100%}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(230,57,70,0.5)}
 .btn-outline{background:transparent;color:var(--cyan);border:1px solid rgba(0,240,255,0.4)}
 .btn-outline:hover{background:rgba(0,240,255,0.1);transform:translateY(-2px)}
-.btn-apple{background:#a349d5;box-shadow:0 0 20px rgba(163,73,213,0.3)}
-.btn-apple:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(163,73,213,0.5)}
-.btn-listen{background:var(--orange);box-shadow:0 0 20px rgba(255,107,53,0.3)}
-.btn-listen:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(255,107,53,0.5)}
+.btn-apple{background:#a349d5;box-shadow:0 0 20px rgba(163,73,213,0.3);font-size:.82rem;padding:.65rem 1.4rem;opacity:.85}
+.btn-apple:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(163,73,213,0.5);opacity:1}
+.btn-listen{background:var(--orange);box-shadow:0 0 20px rgba(255,107,53,0.3);font-size:.82rem;padding:.65rem 1.4rem;opacity:.85}
+.btn-listen:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(255,107,53,0.5);opacity:1}
+.btn-otayori{background:transparent;color:var(--cyan);border:2px solid rgba(0,240,255,0.5);border-radius:50px;font-size:.9rem;letter-spacing:1px}
+.btn-otayori:hover{background:rgba(0,240,255,0.1);transform:translateY(-2px);box-shadow:0 0 25px rgba(0,240,255,0.3);border-color:var(--cyan)}
 
 /* SECTIONS */
 section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
@@ -269,7 +271,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 .line-cta .line-subtitle{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:3px;color:#06c755;margin-bottom:1.5rem}
 .line-cta .line-desc{color:var(--gray);font-size:.95rem;max-width:550px;margin:0 auto 2rem;line-height:2}
 .line-cta .line-desc strong{color:var(--white)}
-.btn-line{background:#06c755;color:#fff;box-shadow:0 0 20px rgba(6,199,85,0.3);font-weight:900}
+.btn-line{background:#06c755;color:#fff;box-shadow:0 0 20px rgba(6,199,85,0.3);font-weight:900;white-space:nowrap}
 .btn-line:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(6,199,85,0.5);color:#fff}
 .line-qr{display:inline-block;margin-top:1rem;font-size:.8rem;color:var(--gray)}
 
@@ -328,8 +330,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   nav ul.open{display:flex}
   .hamburger{display:flex}
   .personality-grid,.platform-grid{grid-template-columns:1fr}
-  .cta-group{flex-direction:column;align-items:center}
+  .cta-group{flex-direction:column;align-items:center;gap:.7rem}
   .btn{width:100%;max-width:320px;justify-content:center}
+  .btn-apple,.btn-listen{max-width:260px;padding:.55rem 1.2rem;font-size:.78rem;opacity:.75}
   section{padding:3.5rem 1.5rem}
   .concept-box{padding:2rem 1.5rem}
   .jpa-box{padding:3rem 1.5rem}
@@ -348,6 +351,29 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 /* Popular badge */
 .short-card.popular{box-shadow:0 0 0 2px var(--main);}
 .short-card-badge{position:absolute;top:8px;right:8px;background:var(--main);color:#fff;font-size:0.7rem;font-weight:700;padding:2px 8px;border-radius:20px;z-index:2;}
+
+/* OTAYORI FAB (floating action button) */
+.otayori-fab{position:fixed;bottom:100px;right:20px;z-index:998;height:48px;border-radius:50px;background:var(--cyan);border:none;cursor:pointer;display:flex;align-items:center;gap:.5rem;padding:0 1.2rem 0 .9rem;box-shadow:0 4px 20px rgba(0,240,255,0.4);transition:all .3s;text-decoration:none}
+.otayori-fab:hover{transform:scale(1.05);box-shadow:0 6px 30px rgba(0,240,255,0.6)}
+.otayori-fab svg{fill:#0a0a0f;width:22px;height:22px;flex-shrink:0}
+.otayori-fab-text{color:#0a0a0f;font-size:.8rem;font-weight:900;white-space:nowrap;letter-spacing:.5px}
+@media(max-width:768px){
+  .otayori-fab{bottom:100px;right:14px;height:42px;border-radius:50px;padding:0 .9rem 0 .7rem}
+  .otayori-fab svg{width:20px;height:20px}
+  .otayori-fab-text{font-size:.72rem}
+}
+
+/* OTAYORI (お便り) */
+.otayori-section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.otayori-box{background:var(--card-bg);border:1px solid rgba(0,240,255,0.15);border-radius:20px;padding:2.5rem;overflow:hidden}
+.otayori-desc{color:var(--gray);font-size:.95rem;margin-bottom:2rem;line-height:2}
+.otayori-desc strong{color:var(--white)}
+.otayori-frame{width:100%;height:680px;border:none;border-radius:12px;background:rgba(255,255,255,0.03)}
+@media(max-width:768px){
+  .otayori-section{padding:3.5rem 1.5rem}
+  .otayori-box{padding:1.5rem}
+  .otayori-frame{height:600px}
+}
 </style>
 </head>
 <body>
@@ -357,11 +383,12 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   <div class="nav-inner">
     <a href="#" class="logo"><span class="logo-tag">PODCAST</span>オーモシロ・シュワルツェネッガー</a>
     <ul id="navMenu">
-      <li><a href="#concept">CONCEPT</a></li>
-      <li><a href="#hosts">HOSTS</a></li>
-      <li><a href="#shorts">SHORTS</a></li>
-      <li><a href="#episodes">EPISODES</a></li>
-      <li><a href="#listen">LISTEN</a></li>
+      <li><a href="#concept">コンセプト</a></li>
+      <li><a href="#hosts">パーソナリティ</a></li>
+      <li><a href="#shorts">ショート動画</a></li>
+      <li><a href="#episodes">エピソード</a></li>
+      <li><a href="#otayori">お便り</a></li>
+      <li><a href="#listen">聴く</a></li>
       <li><a href="#jpa">JPA</a></li>
       <li><a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener" class="nav-cta">&#9654; FOLLOW</a></li>
     </ul>
@@ -387,7 +414,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
       <a href="https://open.spotify.com/show/56OB1eYPQ9UdhKkNwn091a" target="_blank" rel="noopener" class="btn btn-spotify"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify でフォロー</a>
       <a href="https://podcasts.apple.com/jp/podcast/id1862507080" target="_blank" rel="noopener" class="btn btn-apple"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .8C5.6.8.3 6.1.3 12.5c0 3.2 1.3 6 3.4 8.1.3.3.8.4 1.1.1.3-.3.4-.8.1-1.1-1.9-1.9-3-4.4-3-7.1 0-5.6 4.5-10.1 10.1-10.1s10.1 4.5 10.1 10.1c0 2.7-1.1 5.2-2.9 7.1-.3.3-.2.8.1 1.1.3.3.8.2 1.1-.1 2.1-2.1 3.4-5 3.4-8.1C23.7 6.1 18.4.8 12 .8zm0 3.6c-4 0-7.3 3.3-7.3 7.3 0 2 .8 3.9 2.2 5.2.3.3.8.3 1.1 0 .3-.3.3-.8 0-1.1-1.1-1.1-1.7-2.5-1.7-4.1 0-3.1 2.6-5.7 5.7-5.7s5.7 2.6 5.7 5.7c0 1.6-.6 3-1.7 4.1-.3.3-.3.8 0 1.1.3.3.8.3 1.1 0 1.4-1.4 2.2-3.2 2.2-5.2 0-4-3.3-7.3-7.3-7.3zm0 3.6c1.32 0 2.39 1.07 2.39 2.39 0 .96-.56 1.79-1.38 2.17-.19.09-.31.29-.31.51v.43c0 .3-.02.6-.07.89-.03.13-.14.22-.24.21h-.78c-.1.01-.21-.08-.24-.21-.05-.29-.07-.59-.07-.89v-.43c0-.22-.13-.42-.31-.51-.82-.38-1.38-1.21-1.38-2.17 0-1.32 1.07-2.39 2.39-2.39zm0 6.73c.27 0 .5.02.74.07.12.02.2.13.2.25v.7c0 .77-.07 1.54-.21 2.29-.03.14-.15.22-.28.2-.15-.01-.3-.01-.45 0-.15.01-.3.01-.45 0-.13.02-.25-.06-.28-.2-.14-.75-.21-1.52-.21-2.29v-.7c0-.12.08-.23.2-.25.24-.05.47-.07.74-.07z"/></svg> Apple Podcasts</a>
       <a href="https://listen.style/p/omoshiro_schwarzenegger" target="_blank" rel="noopener" class="btn btn-listen"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm-1.5 15.5a1.5 1.5 0 11-3 0V10a1.5 1.5 0 013 0v6.5zm4 0a1.5 1.5 0 11-3 0V7.5a1.5 1.5 0 013 0v9zm4-2a1.5 1.5 0 11-3 0V8.5a1.5 1.5 0 013 0v6z"/></svg> LISTEN</a>
-      <a href="https://forms.gle/Fw7MaH2TSZpQac9t6" target="_blank" rel="noopener" class="btn btn-outline">&#9993; お便りを送る</a>
+      <a href="#otayori" class="btn btn-otayori">&#9993; お便りを送る</a>
     </div>
   </div>
 </section>
@@ -633,6 +660,21 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
   </div>
 </section>
 
+<!-- OTAYORI -->
+<div class="vs-divider"><span class="vs-text">MAIL</span></div>
+
+<section id="otayori" class="otayori-section">
+  <div class="fade-in">
+    <div class="section-label">Send Us a Message</div>
+    <h2 class="section-title">お便りを送る</h2>
+    <p class="section-subtitle">番組で読まれるかも。あなたの声を聞かせてください。</p>
+  </div>
+  <div class="otayori-box fade-in">
+    <p class="otayori-desc">募集中のコーナーやお題は<strong>フォーム内に記載</strong>しています。<br>内容は随時更新されるので、いつでも最新の募集内容をチェックできます。</p>
+    <iframe class="otayori-frame" src="https://docs.google.com/forms/d/e/1FAIpQLScvapvEQim2_KkPqFjWUfL3NdU7I6E_MUZEf3-I_q8OGJH-Jw/viewform?embedded=true" loading="lazy" title="お便りフォーム">読み込み中...</iframe>
+  </div>
+</section>
+
 <!-- FOLLOW BANNER -->
 <div class="follow-banner fade-in">
   <p><strong>まだフォローしてない？</strong> &#8212; フォローすると最新回が自動で届きます</p>
@@ -652,7 +694,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <a href="https://listen.style/p/omoshiro_schwarzenegger" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot l"></span>LISTEN<span class="platform-arrow">&#8594;</span></a>
     <a href="https://music.amazon.co.jp/podcasts/90bad674-28d8-4a09-8e23-6e5ee58a0178" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot m"></span>Amazon Music<span class="platform-arrow">&#8594;</span></a>
     <a href="https://www.youtube.com/playlist?list=PLqJkU2vxKpHp5nTgOjL0Y8JZRF89NbH7r" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot y"></span>YouTube Shorts<span class="platform-arrow">&#8594;</span></a>
-    <a href="https://forms.gle/Fw7MaH2TSZpQac9t6" class="platform-link" target="_blank" rel="noopener"><span class="platform-dot" style="background:var(--cyan);box-shadow:0 0 8px rgba(0,240,255,0.5)"></span>&#9993; お便りを送る<span class="platform-arrow">&#8594;</span></a>
+    <a href="#otayori" class="platform-link"><span class="platform-dot" style="background:var(--cyan);box-shadow:0 0 8px rgba(0,240,255,0.5)"></span>&#9993; お便りを送る<span class="platform-arrow">&#8594;</span></a>
   </div>
 </section>
 
@@ -693,6 +735,12 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <span>#JPA2027</span>
   </div>
 </div>
+
+<!-- OTAYORI FAB -->
+<a href="#otayori" class="otayori-fab" id="otayoriFab" aria-label="お便りを送る">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12zM7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+  <span class="otayori-fab-text">お便りを送る</span>
+</a>
 
 <!-- FLOATING PLAYER -->
 <div class="floating-player" id="floatingPlayer">
@@ -806,6 +854,17 @@ function toggleEpEmbed(item){
   var btn=document.getElementById('fpMinimize');
   if(!fp||!btn)return;
   btn.addEventListener('click',function(){fp.classList.add('hidden')});
+})();
+
+/* Otayori FAB: hide when otayori section is visible */
+(function(){
+  var fab=document.getElementById('otayoriFab');
+  var sec=document.getElementById('otayori');
+  if(!fab||!sec||!('IntersectionObserver' in window))return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){fab.style.opacity=e.isIntersecting?'0':'1';fab.style.pointerEvents=e.isIntersecting?'none':'auto'});
+  },{threshold:0.15});
+  obs.observe(sec);
 })();
 </script>
 
