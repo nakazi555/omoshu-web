@@ -22,5 +22,16 @@
       "UPDATE index.html (shorts+episodes+JSON-LD)",
       "UPDATE sitemap.xml"
     ]
+  },
+  {
+    "timestamp": "2026-04-21T18:59:03.367727",
+    "changes": [
+      "UPDATE episodes/ep-05-2026.html (+1 shorts)",
+      "UPDATE episodes/ep-08-nhk.html (+1 shorts)",
+      "UPDATE episodes/ep-13-ai.html (+1 shorts)",
+      "UPDATE episodes/ep-12.html (+1 shorts)",
+      "UPDATE episodes/ep-06-ez-do.html (+1 shorts)",
+      "UPDATE sitemap.xml"
+    ]
   }
 ]
