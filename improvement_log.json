@@ -237,5 +237,26 @@
       "UPDATE index.html (shorts+episodes+JSON-LD)",
       "UPDATE sitemap.xml"
     ]
+  },
+  {
+    "timestamp": "2026-05-02T22:30:05.684882",
+    "changes": [
+      "UPDATE episodes/ep-01.html (+9 shorts)",
+      "UPDATE episodes/ep-05-2026.html (+2 shorts)",
+      "UPDATE episodes/ep-10.html (+1 shorts)",
+      "UPDATE episodes/ep-11-100.html (+2 shorts)",
+      "UPDATE episodes/ep-08-nhk.html (+2 shorts)",
+      "UPDATE episodes/ep-07.html (+1 shorts)",
+      "UPDATE episodes/ep-13-ai.html (+1 shorts)",
+      "UPDATE episodes/ep-12.html (+2 shorts)",
+      "UPDATE episodes/ep-09.html (+1 shorts)",
+      "UPDATE episodes/ep-15.html (+1 shorts)",
+      "UPDATE episodes/ep-14-ai.html (+1 shorts)",
+      "UPDATE episodes/ep-03.html (+1 shorts)",
+      "UPDATE episodes/ep-06-ez-do.html (+2 shorts)",
+      "UPDATE episodes/ep-02-28.html (+4 shorts)",
+      "UPDATE index.html (shorts+episodes+JSON-LD)",
+      "UPDATE sitemap.xml"
+    ]
   }
 ]
