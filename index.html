@@ -47,7 +47,7 @@
   ],
   "genre": ["Comedy", "Technology"],
   "inLanguage": "ja",
-  "numberOfEpisodes": 17,
+  "numberOfEpisodes": 18,
   "hasPart": [
     {"@type": "VideoObject", "name": "レミ体力切れ？", "description": "EP14切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/3QrzXBeUDog/oar2.jpg", "contentUrl": "https://youtube.com/shorts/3QrzXBeUDog", "uploadDate": "2026-05-06"},
     {"@type": "VideoObject", "name": "スーパー戦隊、まさかの終了！？", "description": "EP01切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/FuT_kkjqQEk/oar2.jpg", "contentUrl": "https://youtube.com/shorts/FuT_kkjqQEk", "uploadDate": "2026-05-03"},
@@ -423,7 +423,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 
 <!-- STATS BAR -->
 <div class="stats-bar fade-in">
-  <div class="stat"><span class="stat-num">17</span><span class="stat-label">EPISODES</span></div>
+  <div class="stat"><span class="stat-num">18</span><span class="stat-label">EPISODES</span></div>
   <div class="stat"><span class="stat-num">WEEKLY</span><span class="stat-label">UPDATE</span></div>
   <div class="stat"><span class="stat-num">5+</span><span class="stat-label">PLATFORMS</span></div>
   <div class="stat"><span class="stat-num">2025.12</span><span class="stat-label">SINCE</span></div>
@@ -834,6 +834,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <p class="section-subtitle">タップするとその場で再生できます。全話無料。</p>
   </div>
   <div class="episode-list">
+    <div class="episode-item fade-in" data-youtube="th8zR9G43Bk" onclick="toggleEpEmbed(this)">
+      <div class="episode-row"><span class="episode-num">EP18</span><div class="episode-info"><div class="episode-title">鳥貴族でもうお腹いっぱいなんだが...</div><div class="episode-meta">2026-05-17</div></div><span class="episode-play">&#9654;</span></div>
+      <div class="episode-embed"></div>
+    </div>
     <div class="episode-item fade-in" data-spotify="6Swkzr2SHlNyhqekg2bFiI" onclick="toggleEpEmbed(this)">
       <div class="episode-row"><span class="episode-num">EP17</span><div class="episode-info"><div class="episode-title">ヨボヨボのボコボコ、死んでいった戦士(同期)たちへ愛を込めて』オーモシロ・シュワルツェネッガー</div><div class="episode-meta">2026-04-26 &#183; 00:29:15</div></div><span class="episode-play">&#9654;</span></div>
       <div class="episode-embed"></div>
@@ -1071,18 +1075,26 @@ function playShort(card){
 
 /* Episode inline Spotify embed */
 function toggleEpEmbed(item){
-  var id=item.getAttribute('data-spotify');
+  var sid=item.getAttribute('data-spotify');
+  var yid=item.getAttribute('data-youtube');
   var embed=item.querySelector('.episode-embed');
   if(item.classList.contains('open')){
     item.classList.remove('open');return;
   }
   document.querySelectorAll('.episode-item.open').forEach(function(el){el.classList.remove('open')});
-  if(id){
+  if(sid||yid){
     if(!embed.querySelector('iframe')){
       var f=document.createElement('iframe');
-      f.src='https://open.spotify.com/embed/episode/'+id+'?utm_source=generator&theme=0';
-      f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-      f.loading='lazy';f.title='Spotify Player';
+      if(sid){
+        f.src='https://open.spotify.com/embed/episode/'+sid+'?utm_source=generator&theme=0';
+        f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+        f.title='Spotify Player';
+      }else{
+        f.src='https://www.youtube.com/embed/'+yid;
+        f.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';
+        f.title='YouTube Player';
+      }
+      f.loading='lazy';
       embed.appendChild(f);
     }
     item.classList.add('open');
