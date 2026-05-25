@@ -3,7 +3,7 @@
 ## 1. ディレクトリ構造
 
 ```
-/Users/s22312/omoshu-web/
+/Users/nakazi555/omoshu-web/
 ├── .git/                          # GitHub git リポジトリ
 ├── episodes/                      # 個別エピソードページ（HTMLファイル×15話）
 │   ├── ep-01.html
