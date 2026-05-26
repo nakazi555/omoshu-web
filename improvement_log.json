@@ -720,5 +720,16 @@
       "UPDATE index.html (shorts-grid:10件 / hasPart:10件 / セクション見出し『話数別ベストショート』)",
       "UPDATE sitemap.xml (root lastmod)"
     ]
+  },
+  {
+    "timestamp": "2026-05-26T19:07:04.905876",
+    "changes": [
+      "DATA-DRIVEN RE-CURATION: yt-dlpで全49本の再生数取得→各話TOPで10本を再選定",
+      "REPLACE EP06: 出雲大社1500円(1057v) → おみくじ突き抜け(1992v)",
+      "REPLACE EP11: 釧路でガンダム(1026v) → ガンダム！ネタ男(1628v)",
+      "REPLACE EP12: ママザウルス爆誕(438v) → 60歳！ティラノ(457v)",
+      "Top performer: EP14 レミ体力切れ？ (3,231再生)",
+      "UPDATE posts.json (49 YouTube posts metrics 反映)"
+    ]
   }
 ]
