@@ -753,5 +753,12 @@
       "UPDATE index.html (shorts+episodes+JSON-LD)",
       "UPDATE sitemap.xml"
     ]
+  },
+  {
+    "timestamp": "2026-05-26T19:37:31.953061",
+    "changes": [
+      "UPDATE index.html (shorts+episodes+JSON-LD)",
+      "UPDATE sitemap.xml"
+    ]
   }
 ]
