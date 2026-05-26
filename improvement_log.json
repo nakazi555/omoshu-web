@@ -712,5 +712,13 @@
       "UPDATE index.html (shorts+episodes+JSON-LD)",
       "UPDATE sitemap.xml"
     ]
+  },
+  {
+    "timestamp": "2026-05-26T18:55:25.630295",
+    "changes": [
+      "CURATE SHORTS: 49本→10本（最新10話×各1本のベストピック）",
+      "UPDATE index.html (shorts-grid:10件 / hasPart:10件 / セクション見出し『話数別ベストショート』)",
+      "UPDATE sitemap.xml (root lastmod)"
+    ]
   }
 ]
