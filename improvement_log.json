@@ -1959,5 +1959,31 @@
       "UPDATE episodes/ep-02-28.html (+4 shorts)",
       "UPDATE sitemap.xml"
     ]
+  },
+  {
+    "timestamp": "2026-07-15T22:30:03.005956",
+    "changes": [
+      "NEW episodes/ep-23.html",
+      "UPDATE episodes/ep-04-2025sp.html (+4 shorts)",
+      "UPDATE episodes/ep-16.html (+7 shorts)",
+      "UPDATE episodes/ep-01.html (+9 shorts)",
+      "UPDATE episodes/ep-17.html (+5 shorts)",
+      "UPDATE episodes/ep-05-2026.html (+4 shorts)",
+      "UPDATE episodes/ep-10.html (+4 shorts)",
+      "UPDATE episodes/ep-11-100.html (+6 shorts)",
+      "UPDATE episodes/ep-08-nhk.html (+3 shorts)",
+      "UPDATE episodes/ep-07.html (+1 shorts)",
+      "UPDATE episodes/ep-13-ai.html (+3 shorts)",
+      "UPDATE episodes/ep-12.html (+12 shorts)",
+      "UPDATE episodes/ep-09.html (+4 shorts)",
+      "UPDATE episodes/ep-18.html (+3 shorts)",
+      "UPDATE episodes/ep-15.html (+1 shorts)",
+      "UPDATE episodes/ep-14-ai.html (+7 shorts)",
+      "UPDATE episodes/ep-03.html (+4 shorts)",
+      "UPDATE episodes/ep-06-ez-do.html (+3 shorts)",
+      "UPDATE episodes/ep-02-28.html (+4 shorts)",
+      "UPDATE index.html (shorts+episodes+JSON-LD)",
+      "UPDATE sitemap.xml"
+    ]
   }
 ]
