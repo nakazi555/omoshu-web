@@ -2324,5 +2324,13 @@
       "UPDATE index.html (shorts+episodes+JSON-LD)",
       "UPDATE sitemap.xml"
     ]
+  },
+  {
+    "timestamp": "2026-08-02T03:59:36.511768",
+    "changes": [
+      "NEW docs/kumamoto-project.md (熊本ナイト企画書: 趣旨/時期/見え方の設計/お金の設計/当日構成/協賛メニュー/やらないこと/声かけテンプレ)",
+      "NEW docs/kumamoto-ideas.md (令和8年熊本地震のリサーチ + 支援アイデア8案 + 参考事例6件)",
+      "NOTE サイト本体(index.html/episodes/shorts/sitemap.xml)は変更なし"
+    ]
   }
 ]
