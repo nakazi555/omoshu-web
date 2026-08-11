@@ -1,27 +1,5 @@
 [
   {
-    "timestamp": "2026-05-06T22:45:29.886914",
-    "changes": [
-      "UPDATE episodes/ep-04-2025sp.html (+1 shorts)",
-      "UPDATE episodes/ep-01.html (+10 shorts)",
-      "UPDATE episodes/ep-05-2026.html (+3 shorts)",
-      "UPDATE episodes/ep-10.html (+1 shorts)",
-      "UPDATE episodes/ep-11-100.html (+4 shorts)",
-      "UPDATE episodes/ep-08-nhk.html (+3 shorts)",
-      "UPDATE episodes/ep-07.html (+1 shorts)",
-      "UPDATE episodes/ep-13-ai.html (+1 shorts)",
-      "UPDATE episodes/ep-12.html (+2 shorts)",
-      "UPDATE episodes/ep-09.html (+2 shorts)",
-      "UPDATE episodes/ep-15.html (+1 shorts)",
-      "UPDATE episodes/ep-14-ai.html (+6 shorts)",
-      "UPDATE episodes/ep-03.html (+2 shorts)",
-      "UPDATE episodes/ep-06-ez-do.html (+3 shorts)",
-      "UPDATE episodes/ep-02-28.html (+5 shorts)",
-      "UPDATE index.html (shorts+episodes+JSON-LD)",
-      "UPDATE sitemap.xml"
-    ]
-  },
-  {
     "timestamp": "2026-05-07T22:30:09.970298",
     "changes": [
       "UPDATE episodes/ep-04-2025sp.html (+1 shorts)",
@@ -2406,6 +2384,38 @@
       "UPDATE episodes/ep-23.html (+5 shorts)",
       "UPDATE episodes/ep-02-28.html (+4 shorts)",
       "UPDATE episodes/ep-19.html (+4 shorts)",
+      "UPDATE index.html (shorts+episodes+JSON-LD)",
+      "UPDATE sitemap.xml"
+    ]
+  },
+  {
+    "timestamp": "2026-08-11T22:30:06.126884",
+    "changes": [
+      "NEW episodes/ep-25.html",
+      "UPDATE episodes/ep-20.html (+4 shorts)",
+      "UPDATE episodes/ep-04-2025sp.html (+4 shorts)",
+      "UPDATE episodes/ep-16.html (+7 shorts)",
+      "UPDATE episodes/ep-01.html (+9 shorts)",
+      "UPDATE episodes/ep-17.html (+5 shorts)",
+      "UPDATE episodes/ep-05-2026.html (+4 shorts)",
+      "UPDATE episodes/ep-21.html (+2 shorts)",
+      "UPDATE episodes/ep-10.html (+4 shorts)",
+      "UPDATE episodes/ep-11-100.html (+7 shorts)",
+      "UPDATE episodes/ep-08-nhk.html (+3 shorts)",
+      "UPDATE episodes/ep-07.html (+1 shorts)",
+      "UPDATE episodes/ep-13-ai.html (+3 shorts)",
+      "UPDATE episodes/ep-12.html (+12 shorts)",
+      "UPDATE episodes/ep-24.html (+2 shorts)",
+      "UPDATE episodes/ep-09.html (+4 shorts)",
+      "UPDATE episodes/ep-18.html (+3 shorts)",
+      "UPDATE episodes/ep-22.html (+1 shorts)",
+      "UPDATE episodes/ep-15.html (+1 shorts)",
+      "UPDATE episodes/ep-14-ai.html (+7 shorts)",
+      "UPDATE episodes/ep-03.html (+3 shorts)",
+      "UPDATE episodes/ep-06-ez-do.html (+3 shorts)",
+      "UPDATE episodes/ep-23.html (+5 shorts)",
+      "UPDATE episodes/ep-02-28.html (+4 shorts)",
+      "UPDATE episodes/ep-19.html (+5 shorts)",
       "UPDATE index.html (shorts+episodes+JSON-LD)",
       "UPDATE sitemap.xml"
     ]
