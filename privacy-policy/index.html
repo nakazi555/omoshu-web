@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>omoshuwa-podcast Privacy Policy</title>
+<title>プライバシーポリシー | オーモシロ・シュワルツェネッガー</title>
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; line-height: 1.8; color: #333; background: #fafafa; }
 h1 { color: #1a1a2e; border-bottom: 2px solid #e94560; padding-bottom: 10px; }
@@ -13,46 +13,79 @@ a { color: #e94560; }
 </style>
 </head>
 <body>
-<h1>omoshuwa-podcast Privacy Policy</h1>
-<p>Last updated: May 8, 2026</p>
+<h1>プライバシーポリシー</h1>
+<p>最終更新日: 2026年8月21日</p>
 
-<h2>1. Overview</h2>
-<p>This Privacy Policy describes how omoshuwa-podcast handles information in connection with our podcast content distribution services.</p>
+<h2>1. はじめに</h2>
+<p>本プライバシーポリシーは、ポッドキャスト「オーモシロ・シュワルツェネッガー」公式サイト（omoshuwa-podcast.com）および公式LINEアカウント「オモシュワくん」における情報の取り扱いについて説明するものです。</p>
 
-<h2>2. Information We Collect</h2>
-<p>Our automated content distribution tools do <strong>not</strong> collect any personal information from users, viewers, or listeners. Specifically:</p>
+<h2>2. LINE公式アカウント「オモシュワくん」で取得する情報</h2>
+<p>「オモシュワくん」を友だち追加し、メッセージを送信すると、以下の情報を取得・保存します。</p>
 <ul>
-<li>We do not collect names, email addresses, or contact information through our distribution tools.</li>
-<li>We do not use cookies or tracking technologies on this website.</li>
-<li>We do not access or store any data from social media platform users.</li>
+<li><strong>LINEユーザーID</strong> — LINEが発行する内部識別子です。氏名・電話番号・メールアドレスそのものではありませんが、個人を識別しうる情報として扱います。</li>
+<li><strong>送信されたメッセージ本文（テキスト）</strong> — やり取りとして保存します。</li>
+<li><strong>送信された画像</strong> — AIによる画像解析（Google Gemini API）のために送信しますが、画像データ自体は当方のデータベースには保存しません。会話履歴には「[画像を送信]」という記録のみが残ります。</li>
+<li><strong>ニックネーム</strong> — ご自身で設定された場合のみ保存します。</li>
+<li><strong>利用統計</strong> — メッセージ送信数・知識提供数などの回数。</li>
+<li><strong>「ウケ判定」の星評価（1〜5）</strong> — 評価いただいた場合。</li>
+<li><strong>お便り投稿の内容</strong> — LINE上で「お便りを送る」機能をご利用いただいた場合。投稿は送信者のユーザーIDとともにデータベースへ保存します。</li>
+</ul>
+<p>なお、本サイトの「お便り」ボタンおよび埋め込みフォームは、LINE Botとは別に、Googleフォーム（forms.gle）を直接ご利用いただく仕組みです。この場合の入力内容はGoogle社のフォームサービスを通じて処理され、当方のデータベースには保存されません。詳細は<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>をご確認ください。</p>
+
+<h2>3. 情報の利用目的</h2>
+<ul>
+<li>「オモシュワくん」としてメッセージに返答するため（Google Gemini APIへの送信を含みます）</li>
+<li>返答の精度を上げるため、メッセージ内容の一部をもとにリアルタイムのWeb検索（DuckDuckGo）を行うことがあります</li>
+<li>複数ユーザーの会話ログをまとめて分析し、キャラクターの受け答え・知識を改善するため（分析結果は個人を特定できない形で「知識」として保存します）</li>
+<li>特に評価の高いやり取りを「今週の名言」として抜粋し、SNS・番組内・コミュニティ（Discord/LINEオープンチャット等）で紹介することがあります（その際、ユーザーIDなど個人を特定できる情報は含めません）</li>
+<li>サービスの利用状況を把握するため（ユーザー数・メッセージ数などの統計）</li>
 </ul>
 
-<h2>3. TikTok Integration</h2>
-<p>Our TikTok integration uses the Content Posting API exclusively to publish our own video content. The integration:</p>
+<h2>4. 第三者への提供・外部送信</h2>
+<p>取得した情報は、サービス提供のために以下の外部サービスへ送信されることがあります。</p>
 <ul>
-<li>Only accesses the app owner's TikTok account (no third-party user data).</li>
-<li>Uses OAuth tokens (access_token and refresh_token) stored locally on the app owner's machine.</li>
-<li>Uses <code>video.upload</code> and <code>video.publish</code> scopes to upload short video clips.</li>
-<li>Uses <code>video.list</code> scope only to verify successful upload status.</li>
-<li>Uses <code>user.info.basic</code> and <code>user.info.profile</code> scopes to verify account identity.</li>
-<li>Does not share any data with third parties.</li>
+<li><strong>Google（Gemini API）</strong> — メッセージ・画像への応答を生成するため、メッセージ本文または画像データを送信します。</li>
+<li><strong>DuckDuckGo</strong> — リアルタイムの情報を取得するため、メッセージ内容の一部を検索クエリとして送信することがあります。</li>
+<li><strong>LINE株式会社</strong> — LINE Messaging APIを通じたメッセージの送受信のため。</li>
+<li><strong>Discord / LINEオープンチャット</strong> — 運営が設定している場合、新エピソード配信や「今週の名言」等のコミュニティ向け通知を送信することがあります。</li>
+</ul>
+<p>上記以外の目的で、取得した情報を第三者へ販売・提供することはありません。</p>
+
+<h2>5. Cookie・アクセス解析</h2>
+<p>本サイトのトップページでは、Google Analytics 4（測定ID: G-7HE7Z42J1F）を使用してアクセス状況を解析しています。Google Analyticsはcookie等を利用して匿名の利用状況データを収集します。データの取り扱いについては<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>をご確認ください。ブラウザの設定でcookieを無効化することも可能です。</p>
+<p>また、本サイトにはSpotify・YouTube・Googleフォームの埋め込みコンテンツが含まれており、これらは各サービス独自のcookie等を設定する場合があります。</p>
+
+<h2>6. コンテンツ配信ツール（TikTok・YouTube・Instagram・X・Threads）について</h2>
+<p>当番組の動画配信に使用するTikTok Content Posting APIおよび各種SNS連携は、運営者自身のアカウントの投稿管理のみに使用します。</p>
+<ul>
+<li>アクセスするのは運営者本人のアカウントのみで、視聴者・リスナー個人のデータは取得しません。</li>
+<li>OAuthトークン（access_token・refresh_token）は運営者のローカル環境に保存されます。</li>
+<li><code>video.upload</code>・<code>video.publish</code>スコープは動画投稿のために使用します。</li>
+<li><code>video.list</code>スコープは投稿の成功確認のみに使用します。</li>
+<li><code>user.info.basic</code>・<code>user.info.profile</code>スコープはアカウント認証のためのみに使用します。</li>
 </ul>
 
-<h2>4. Other Platform Integrations</h2>
-<p>We also distribute content to YouTube, Instagram, X (Twitter), and Threads. Similar to TikTok, these integrations only access the app owner's accounts and do not collect any third-party user data.</p>
+<h2>7. データの保存期間</h2>
+<p>会話履歴・利用統計等は、削除のご請求がない限り保存され続けます。現時点で自動的に古いデータを削除する仕組みは設けていません。</p>
+<p>LINEで「リセット」と送信いただくと、ご自身の会話履歴（メッセージ本文）はその場で削除されます。ニックネーム・利用統計・評価履歴等の削除をご希望の場合は、次項のお問い合わせ窓口までご連絡ください。</p>
+<p>保存された情報は適切に管理するよう努めていますが、完全な安全性を保証するものではありません。</p>
 
-<h2>5. Data Retention</h2>
-<p>OAuth authentication tokens are stored locally on the app owner's machine and are automatically refreshed as needed. No user data is retained in any database or cloud storage.</p>
+<h2>8. データの削除請求・お問い合わせ</h2>
+<p>保存されているご自身の情報の確認・削除をご希望の場合は、以下のいずれかの方法でご連絡ください。</p>
+<ul>
+<li>LINEで「リセット」と送信する（会話履歴のみ、即時削除されます）</li>
+<li><a href="https://forms.gle/4UGgZtSVexxgnpTR6">お問い合わせフォーム</a>から、LINEユーザーIDまたは登録ニックネームを添えてご連絡いただければ、確認のうえ対応します</li>
+</ul>
 
-<h2>6. Children's Privacy</h2>
-<p>Our services are not directed at children under 13. We do not knowingly collect information from children.</p>
+<h2>9. 子どものプライバシー</h2>
+<p>本サービスは13歳未満のお子様を対象としていません。13歳未満のお子様の情報を意図的に収集することはありません。</p>
 
-<h2>7. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+<h2>10. 本ポリシーの変更</h2>
+<p>本プライバシーポリシーは、実際のサービス内容の変更等に応じて改定することがあります。変更した場合は、本ページの最終更新日を更新してお知らせします。</p>
 
-<h2>8. Contact</h2>
-<p>For questions about this Privacy Policy, please contact us through our <a href="https://forms.gle/4UGgZtSVexxgnpTR6">contact form</a>.</p>
+<h2>11. お問い合わせ</h2>
+<p>本プライバシーポリシーに関するお問い合わせは、<a href="https://forms.gle/4UGgZtSVexxgnpTR6">お問い合わせフォーム</a>よりご連絡ください。</p>
 
-<div class="back"><a href="/">&larr; Back to omoshuwa-podcast</a></div>
+<div class="back"><a href="/">&larr; オーモシロ・シュワルツェネッガーへ戻る</a></div>
 </body>
 </html>
