@@ -1,13 +1,5 @@
 [
   {
-    "timestamp": "2026-05-26T18:55:25.630295",
-    "changes": [
-      "CURATE SHORTS: 49本→10本（最新10話×各1本のベストピック）",
-      "UPDATE index.html (shorts-grid:10件 / hasPart:10件 / セクション見出し『話数別ベストショート』)",
-      "UPDATE sitemap.xml (root lastmod)"
-    ]
-  },
-  {
     "timestamp": "2026-05-26T19:07:04.905876",
     "changes": [
       "DATA-DRIVEN RE-CURATION: yt-dlpで全49本の再生数取得→各話TOPで10本を再選定",
@@ -2600,6 +2592,39 @@
       "UPDATE episodes/ep-03.html (+3 shorts)",
       "UPDATE episodes/ep-06-ez-do.html (+3 shorts)",
       "UPDATE episodes/ep-23.html (+9 shorts)",
+      "UPDATE episodes/ep-02-28.html (+4 shorts)",
+      "UPDATE episodes/ep-19.html (+8 shorts)",
+      "UPDATE index.html (shorts+episodes+JSON-LD)",
+      "UPDATE sitemap.xml"
+    ]
+  },
+  {
+    "timestamp": "2026-08-29T22:30:06.904419",
+    "changes": [
+      "UPDATE episodes/ep-20.html (+8 shorts)",
+      "UPDATE episodes/ep-04-2025sp.html (+4 shorts)",
+      "UPDATE episodes/ep-16.html (+7 shorts)",
+      "UPDATE episodes/ep-01.html (+9 shorts)",
+      "UPDATE episodes/ep-17.html (+5 shorts)",
+      "UPDATE episodes/ep-05-2026.html (+4 shorts)",
+      "UPDATE episodes/ep-21.html (+5 shorts)",
+      "UPDATE episodes/ep-10.html (+4 shorts)",
+      "UPDATE episodes/ep-11-100.html (+7 shorts)",
+      "UPDATE episodes/ep-26.html (+10 shorts)",
+      "UPDATE episodes/ep-08-nhk.html (+3 shorts)",
+      "UPDATE episodes/ep-07.html (+1 shorts)",
+      "UPDATE episodes/ep-13-ai.html (+3 shorts)",
+      "UPDATE episodes/ep-12.html (+12 shorts)",
+      "UPDATE episodes/ep-24.html (+4 shorts)",
+      "UPDATE episodes/ep-25.html (+12 shorts)",
+      "UPDATE episodes/ep-09.html (+4 shorts)",
+      "UPDATE episodes/ep-18.html (+3 shorts)",
+      "UPDATE episodes/ep-22.html (+6 shorts)",
+      "UPDATE episodes/ep-15.html (+1 shorts)",
+      "UPDATE episodes/ep-14-ai.html (+7 shorts)",
+      "UPDATE episodes/ep-03.html (+3 shorts)",
+      "UPDATE episodes/ep-06-ez-do.html (+3 shorts)",
+      "UPDATE episodes/ep-23.html (+10 shorts)",
       "UPDATE episodes/ep-02-28.html (+4 shorts)",
       "UPDATE episodes/ep-19.html (+8 shorts)",
       "UPDATE index.html (shorts+episodes+JSON-LD)",
