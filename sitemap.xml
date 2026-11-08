@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://omoshuwa-podcast.com/episodes/ep-30.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://omoshuwa-podcast.com/episodes/ep-29.html</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
