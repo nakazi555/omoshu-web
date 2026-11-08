@@ -1,0 +1,33 @@
+name: generate-episode-pages
+on:
+  schedule:
+    - cron: "0 21 * * *"   # 毎日 06:00 JST
+    - cron: "30 11 * * *"  # 毎日 20:30 JST（当日配信の話を同日中に反映）
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: generate-episodes
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: RSSから未作成のエピソードページを作る
+        run: python3 scripts/generate_episodes.py
+      - name: 変更があれば保存
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "auto: エピソードページ追加（RSS同期）"
+            git pull --rebase origin main
+            git push
+          else
+            echo "新しいエピソードなし"
+          fi

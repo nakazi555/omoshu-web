@@ -47,7 +47,7 @@
   ],
   "genre": ["Comedy", "Technology"],
   "inLanguage": "ja",
-  "numberOfEpisodes": 26,
+  "numberOfEpisodes": 29,
   "hasPart": [
     {"@type": "VideoObject", "name": "ユーリ！タトゥー⁉", "description": "EP26切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/57NreCOH8pI/hqdefault.jpg", "contentUrl": "https://youtube.com/shorts/57NreCOH8pI", "uploadDate": "2026-08-21"},
     {"@type": "VideoObject", "name": "ファンが本編未聴！？", "description": "EP25切り抜きショート", "thumbnailUrl": "https://i.ytimg.com/vi/-4UYQlejnLI/hqdefault.jpg", "contentUrl": "https://youtube.com/shorts/-4UYQlejnLI", "uploadDate": "2026-08-12"},
@@ -429,7 +429,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
 
 <!-- STATS BAR -->
 <div class="stats-bar fade-in">
-  <div class="stat"><span class="stat-num">26</span><span class="stat-label">EPISODES</span></div>
+  <div class="stat"><span class="stat-num">29</span><span class="stat-label">EPISODES</span></div>
   <div class="stat"><span class="stat-num">WEEKLY</span><span class="stat-label">UPDATE</span></div>
   <div class="stat"><span class="stat-num">5+</span><span class="stat-label">PLATFORMS</span></div>
   <div class="stat"><span class="stat-num">2025.12</span><span class="stat-label">SINCE</span></div>
@@ -599,6 +599,18 @@ footer{border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:3re
     <p class="section-subtitle">タップするとその場で再生できます。全話無料。</p>
   </div>
   <div class="episode-list">
+    <div class="episode-item fade-in" data-href="episodes/ep-29.html" onclick="toggleEpEmbed(this)">
+      <div class="episode-row"><span class="episode-num">EP29</span><div class="episode-info"><div class="episode-title">「インフルエンザでプリキュアを見て号泣した夜」</div><div class="episode-meta">2026-11-01 &#183; 00:28:01</div></div><span class="episode-play">&#9654;</span></div>
+      <div class="episode-embed"></div>
+    </div>
+    <div class="episode-item fade-in" data-href="episodes/ep-28.html" onclick="toggleEpEmbed(this)">
+      <div class="episode-row"><span class="episode-num">EP28</span><div class="episode-info"><div class="episode-title">「パンプアップストアと折りたたみiPhone〜気まずさを酒で処理するな〜」</div><div class="episode-meta">2026-10-11 &#183; 00:26:14</div></div><span class="episode-play">&#9654;</span></div>
+      <div class="episode-embed"></div>
+    </div>
+    <div class="episode-item fade-in" data-href="episodes/ep-27.html" onclick="toggleEpEmbed(this)">
+      <div class="episode-row"><span class="episode-num">EP27</span><div class="episode-info"><div class="episode-title">『モテろナカジマ！新コーナー「MKA」始動！』</div><div class="episode-meta">2026-09-22 &#183; 00:31:02</div></div><span class="episode-play">&#9654;</span></div>
+      <div class="episode-embed"></div>
+    </div>
     <div class="episode-item fade-in" data-spotify="60RlOhG0XWJTLsJDHGNCXv" onclick="toggleEpEmbed(this)">
       <div class="episode-row"><span class="episode-num">EP26</span><div class="episode-info"><div class="episode-title">アロサウルスおばあちゃんとドライフラワー鬼ジコり』オーモシロ・シュワルツェネッガー</div><div class="episode-meta">2026-08-16 &#183; 00:26:09</div></div><span class="episode-play">&#9654;</span></div>
       <div class="episode-embed"></div>
@@ -879,6 +891,7 @@ function toggleEpEmbed(item){
     item.classList.remove('open');return;
   }
   document.querySelectorAll('.episode-item.open').forEach(function(el){el.classList.remove('open')});
+  if(!sid&&!yid&&item.getAttribute('data-href')){location.href=item.getAttribute('data-href');return;}
   if(sid||yid){
     if(!embed.querySelector('iframe')){
       var f=document.createElement('iframe');
